@@ -1,0 +1,15 @@
+﻿04:45:56.589 RESUMED (clicked Continue(C))
+04:45:57.313 FIELD shot task-6-run-8-field-044557.png ok=True
+04:46:18.035 FIELD shot task-6-run-8-field-044617.png ok=True
+04:46:38.708 FIELD shot task-6-run-8-field-044638.png ok=True
+04:46:59.385 FIELD shot task-6-run-8-field-044659.png ok=True
+04:47:20.051 FIELD shot task-6-run-8-field-044719.png ok=True
+04:47:40.665 FIELD shot task-6-run-8-field-044740.png ok=True
+04:47:52.922 poll chunk done (popups so far: 0)
+04:48:38.731 FIELD shot task-6-run-8-field-044838.png ok=True
+04:48:59.443 FIELD shot task-6-run-8-field-044859.png ok=True
+04:49:20.132 FIELD shot task-6-run-8-field-044919.png ok=True
+04:49:40.857 FIELD shot task-6-run-8-field-044940.png ok=True
+04:50:01.554 FIELD shot task-6-run-8-field-045001.png ok=True
+04:50:22.281 FIELD shot task-6-run-8-field-045022.png ok=True
+04:50:34.527 poll chunk done (popups so far: 0)

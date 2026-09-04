@@ -68,6 +68,12 @@ namespace URWPGSim2D.Strategy
         /// <summary>Speed below which a cycle counts toward the stuck counter, mm/s.</summary>
         private const double StuckSpeedMmPs = 10.0;
 
+        // === Direct approach parameters (2026-09-04 fix for "wall-crashing" problem #3) ===
+        /// <summary>Forward probe distance in mm during push phase to check for obstacles ahead.</summary>
+        private const double PushProbeDistMm = 200.0;
+        /// <summary>Sample count for line-clear check: one sample per this many mm along the line segment.</summary>
+        private const double LineClearSampleSpacingMm = 100.0;
+
         /// <summary>Rescue zone center, mm.</summary>
         private static readonly Point2D ZoneCenter = new Point2D((ZoneMinX + ZoneMaxX) / 2.0, 0.0);
 
@@ -180,7 +186,51 @@ namespace URWPGSim2D.Strategy
                         ballPos.X + aimDir.X * PushAimAheadMm,
                         ballPos.Z + aimDir.Z * PushAimAheadMm);
                     this.decisions[i].TCode = Steering.GetTCode(heading, Steering.SegmentAngle(fishPos, target));
-                    this.decisions[i].VCode = 14;
+                    // FORWARD PROBE (2026-09-04 fix for "wall-crashing"): check 200mm ahead.
+                    // If obstacle detected in the pushing direction, slow down instead of
+                    // blindly charging at VCode=14.
+                    double probeDistToBall = MapConstants.Distance(fishPos, ballPos);
+                    int vcodePush = 14; // default full throttle
+                    if (probeDistToBall < PushProbeDistMm + PushOffsetMm)
+                    {
+                        // Ball is close enough that our forward probe overlaps the ball region.
+                        // Sample points along the aiming ray beyond the ball to detect obstacles
+                        // in the corridor between ball and rescue zone.
+                        Point2D probeFrom = new Point2D(
+                            ballPos.X + aimDir.X * PushOffsetMm,
+                            ballPos.Z + aimDir.Z * PushOffsetMm);
+                        Point2D probeTo = new Point2D(
+                            ballPos.X + aimDir.X * (PushProbeDistMm + PushOffsetMm),
+                            ballPos.Z + aimDir.Z * (PushProbeDistMm + PushOffsetMm));
+                        if (!IsLineClear(probeFrom, probeTo, 50.0))
+                        {
+                            vcodePush = 5; // reduced speed on obstacle detection
+                        }
+                    }
+                    this.decisions[i].VCode = vcodePush;
+                    continue;
+                }
+
+                // === Direct approach: line-clear check before BFS (2026-09-04 fix for "wall-crashing") ===
+                bool directClear = IsLineClear(fishPos, pushPoint, InflationMm);
+                if (directClear)
+                {
+                    double dist = MapConstants.Distance(fishPos, pushPoint);
+                    double headingDelta = Math.Abs(Steering.FormatAngle(
+                        Steering.SegmentAngle(fishPos, pushPoint) - heading));
+                    // Turn angle > 30° → full speed VCode 14 regardless of distance
+                    int vcodeDirect;
+                    if (headingDelta * 180.0 / Math.PI > 30.0)
+                    {
+                        vcodeDirect = 14;
+                    }
+                    else
+                    {
+                        vcodeDirect = PathExecutor.ApproachVCode(dist);
+                    }
+                    this.decisions[i].TCode = Steering.GetTCode(heading, Steering.SegmentAngle(fishPos, pushPoint));
+                    this.decisions[i].VCode = vcodeDirect;
+                    this.plannedPush[i] = pushPoint;
                     continue;
                 }
 
@@ -363,8 +413,7 @@ namespace URWPGSim2D.Strategy
             return new Point2D(x / len, z / len);
         }
 
-        /// <summary>
-        /// Alignment of the fish-&gt;ball and ball-&gt;zone-center vectors. Returns their dot
+        /// <summary>Alignment of the fish-&gt;ball and ball-&gt;zone-center vectors. Returns their dot
         /// product; angleDeg receives the angle between them in degrees (180 when either
         /// vector is degenerate).
         /// </summary>
@@ -393,6 +442,32 @@ namespace URWPGSim2D.Strategy
             }
             angleDeg = Math.Acos(cos) * 180.0 / Math.PI;
             return dot;
+        }
+
+        // === Direct approach helpers (2026-09-04 fix for "wall-crashing" problem #3) ===
+
+        /// <summary>
+        /// Checks if the line segment from 'from' to 'to' passes through any obstacle.
+        /// Samples evenly along the line; returns true if ALL sample points are valid
+        /// (inside field and not inside any inflated obstacle).
+        /// </summary>
+        private static bool IsLineClear(Point2D from, Point2D to, double inflationMm)
+        {
+            double dx = to.X - from.X;
+            double dz = to.Z - from.Z;
+            double dist = Math.Sqrt(dx * dx + dz * dz);
+            int samples = Math.Max(2, (int)(dist / LineClearSampleSpacingMm));
+            for (int s = 0; s <= samples; s++)
+            {
+                double t = (double)s / samples;
+                double x = from.X + dx * t;
+                double z = from.Z + dz * t;
+                if (!MapConstants.IsPointValid(x, z, inflationMm))
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }

@@ -1,0 +1,6 @@
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\obj\Release\StrategySynchroSwimming.csproj.AssemblyReference.cache
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\obj\Release\StrategySynchroSwimming.csproj.CoreCompileInputs.cache
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\bin\Release\wsyswim.dll
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\bin\Release\wsyswim.pdb
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\obj\Release\wsyswim.dll
+E:\progaram\URWPGSim2D\Strategy\StrategySynchroSwimming\obj\Release\wsyswim.pdb

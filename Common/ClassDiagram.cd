@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="URWPGSim2D.Common.SimEnvironment" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAAEBCBEAAAAAAAAAAAAMBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.1" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.Field" Collapsed="true">
+    <Position X="3.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQpoAgABIhACwAAIAEAEAREgIRoIgBGQAAKgAQKhYA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.DrawHelper" Collapsed="true">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.RoundedDynamic" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAIAAIkAAkEEEAgAAEAACCBAQIAAAAAAAAAAoBg=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.RoundedStatic" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAIAAAgAAgABAAgAAAAAACBAQAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.RectangularDynamic" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAAAAAJkAAgEEEAgAAEEACIAAQIAAAABAABAAgAA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.RectangularStatic" Collapsed="true">
+    <Position X="5.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECAAAAAARgAEgAAAAgAAAEAAKBAQAAAAAAAABAAIBg=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.Ball" Collapsed="true">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAACAAACAAAACBAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.RoundedObstacle" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACBAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.RectangularObstacle" Collapsed="true">
+    <Position X="5.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACBAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.Channel" Collapsed="true">
+    <Position X="5.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAACBAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>Environment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.Mission" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="3" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>CYAAAAAAAAGAAgBAQAAAAQBAACFAgoCAhgAECAAAqBg=</HashCode>
+      <FileName>Mission.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.MyMission" Collapsed="true">
+    <Position X="3" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACEAAAAAAAAQAAAABAAAAARAAAAEAAgAA=</HashCode>
+      <FileName>Mission.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.RoboFish" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAACQAIGOBgEFEBAACUAACCBMQIQoAABBBgA04Bg=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.Team&lt;TFish&gt;" Collapsed="true">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.SysConfig" Collapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAABAEAAAQAAAEAAAAAA=</HashCode>
+      <FileName>SysConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.TeamCommonPara" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAgAAAAAAAQAACBAAAAACAAAAACAIBA=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="URWPGSim2D.Common.UrwpgSimHelper" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.CollisionModelPolygon" Collapsed="true">
+    <Position X="5.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAgAAAAAAAgAAAgABAAAAAAAAAAAAAAAAAAAAIgAA=</HashCode>
+      <FileName>CollisionDetection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.CollisionDetection" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAiAAAAAAAAAAAEAEAAqAAAQAACAQEQAIACAAgA=</HashCode>
+      <FileName>CollisionDetection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.FishSettingComboControls" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAEAAAIAQAAAAEQAICAACAIAAAQAAAAgAAAAA=</HashCode>
+      <FileName>UiLogicInteractTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="URWPGSim2D.Common.BallSettingComboControls" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAhAAAAAAAAAAAAAAAAAAAAwBAAAgAIAAA=</HashCode>
+      <FileName>UiLogicInteractTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="URWPGSim2D.Common.Decision" Collapsed="true">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="URWPGSim2D.Common.CollisionDetectionResult" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAECAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CollisionDetection.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="URWPGSim2D.Common.ISimEnvironment" Collapsed="true">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="URWPGSim2D.Common.IMission" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAEAAgBAQAAAAABAAAEAAgAAggAACAAAAAA=</HashCode>
+      <FileName>IMission.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="URWPGSim2D.Common.IRoboFish" Collapsed="true">
+    <Position X="2" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IRoboFish.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="URWPGSim2D.Common.CollisionType" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAQCEAAAAAAQAQAQAAAAAAAAAAAAAAAAEAAAAAAQA=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="URWPGSim2D.Common.HalfCourt" Collapsed="true">
+    <Position X="3.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>RoboFish.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

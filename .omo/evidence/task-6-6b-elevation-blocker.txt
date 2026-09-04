@@ -1,0 +1,54 @@
+Todo 6 / 6B live simulator smoke QA - elevation blocker evidence
+=================================================================
+Date: 2026-09-04 ~08:29-08:30 (+08:00)
+Agent: Atlas orchestrator (autonomous attempt #3, non-elevated)
+
+Launch attempts history
+-----------------------
+1) Launch via Start-Process -Verb RunAs (elevated) x2: both stalled 120s on the
+   UAC consent prompt -> no human present to click -> no status.json. Aborted.
+2) netsh http show urlacl : NO reservation for http://+:20000/, :50000, :50001.
+3) THIS RUN - Start-Process URWPGSim2DServer.exe at MEDIUM integrity (no RunAs,
+   no UAC possible): process stayed alive 22s but main window title was
+   "Microsoft .NET Framework" = standard .NET unhandled-exception dialog.
+
+Captured exception (UI Automation text dump of the dialog)
+----------------------------------------------------------
+System.InvalidOperationException: Could not start HTTP Listener.
+ The two most common causes for this are:
+ 1) You already have another program listening on the specified port
+ 2) You dont have permissions to listen to http requests. Use the httpreserve
+    command line utility to run using a non-administrator account.
+ Exception message: Access denied (拒绝访问, zh-CN UI)
+   at Microsoft.Dss.Core.DssRuntimeLoader.WaitForInitialize(Boolean isShuttingDown)
+   at Microsoft.Dss.Core.DssRuntimeLoader.Initialize()
+   at Microsoft.Dss.Hosting.DssEnvironment.Initialize(DssRuntimeConfiguration, String[])
+   at Microsoft.Dss.Hosting.DssEnvironment.Initialize(String, Int32, Int32, String[])
+   at Microsoft.Dss.Hosting.DssEnvironment.Initialize(Int32 httpPort, Int32 tcpPort,
+       String[] manifestFilePaths)
+   at ConductorSvr.ConductorSvr.ConductorSvr_Load(Object sender, EventArgs e)
+       ConductorSvr.cs:line 55
+   ... (WinForms Form.OnLoad chain)
+
+Process info: URWPGSim2DServer.exe v1.2.123.20110 from
+E:\progaram\URWPGSim2D\URWPGSim2D\bin (CLR 2.0.50727, zh-CN). DLLs
+Microsoft.Dss.Environment / Microsoft.Dss.Runtime / Microsoft.Ccr.Core 2.2.76.0
+loaded from the same bin dir.
+
+Conclusion
+----------
+URWPGSim2DServer cannot start at medium integrity: its WinForms OnLoad calls
+DssEnvironment.Initialize(20000, 20001, manifest) which binds http://+:20000/,
+an administrative listen prefix. Confirmed 3 independent ways:
+(A) RunAs launch -> UAC prompt (never answered), (B) no urlacl reservation,
+(C) medium-IL launch -> the exact exception above.
+
+Unblock requires ONE human admin action (any of):
+  1. Double-click C:\Users\28954\AppData\Local\Temp\opencode\6b-run\start-phase1.cmd
+     and click Yes on UAC (auto-captures ui-tree.txt + screenshot + status.json).
+  2. Elevated shell: netsh http add urlacl url=http://+:20000/ user=GAMMA-HONOR-ONE\28954
+     (permanent; afterwards everything can run at medium integrity).
+  3. Launch URWPGSim2DServer.exe elevated once and leave it running.
+
+Not automatable: OS permission boundary (no UAC-bypass) and plan guardrail
+(no simulator-core edits, e.g. ConductorSvr.cs line 55 bind).

@@ -1,0 +1,6 @@
+E:\progaram\URWPGSim2D\URWPGSim2D\bin\StrategyQuickRescue.dll
+E:\progaram\URWPGSim2D\URWPGSim2D\bin\StrategyQuickRescue.pdb
+E:\progaram\URWPGSim2D\Strategy\StrategyQuickRescue\obj\Debug\StrategyQuickRescue.csproj.AssemblyReference.cache
+E:\progaram\URWPGSim2D\Strategy\StrategyQuickRescue\obj\Debug\StrategyQuickRescue.csproj.CoreCompileInputs.cache
+E:\progaram\URWPGSim2D\Strategy\StrategyQuickRescue\obj\Debug\StrategyQuickRescue.dll
+E:\progaram\URWPGSim2D\Strategy\StrategyQuickRescue\obj\Debug\StrategyQuickRescue.pdb

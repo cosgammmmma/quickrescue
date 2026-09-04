@@ -1,0 +1,6 @@
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\bin\Release\StrategyBallMoving.dll
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\bin\Release\StrategyBallMoving.pdb
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\obj\Release\StrategyBallMoving.csproj.AssemblyReference.cache
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\obj\Release\StrategyBallMoving.csproj.CoreCompileInputs.cache
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\obj\Release\StrategyBallMoving.dll
+E:\progaram\URWPGSim2D\Strategy\StrategyBallMoving\obj\Release\StrategyBallMoving.pdb

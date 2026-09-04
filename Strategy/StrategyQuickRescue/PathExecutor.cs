@@ -62,6 +62,13 @@ namespace URWPGSim2D.Strategy
         /// <summary>Consecutive slow cycles (see PathUpdateState.StuckCycles) that trigger a replan.</summary>
         private const int StuckCyclesLimit = 50;
 
+        // === Two-stage speed curve parameters (2026-09-04 fix for "slow movement") ===
+        /// <summary>Cruise distance: beyond this, fish runs at full throttle VCode 14 (~780 mm/s).</summary>
+        private const double CruiseDistMm = 1500.0;
+        /// <summary>Brake distance: below this, fish slows to VCode 3 (~67 mm/s) for precise turning near waypoints.</summary>
+        /// Updated 2026-09-04: 400→200mm. User request: only start braking when very close.
+        private const double BrakeDistMm = 200.0;
+
         /// <summary>
         /// Advances waypointIndex along the path and computes the turn/speed codes.
         /// Null/empty path: steer straight at fallbackTarget at fixed vcode 3 (never indexes the list).
@@ -102,42 +109,49 @@ namespace URWPGSim2D.Strategy
 
             double desired = Steering.SegmentAngle(fishPos, waypoints[waypointIndex]);
             tcode = Steering.GetTCode(headingRad, desired);
-            vcode = ApproachVCode(distToCurrent);
+
+            // Turn > 30° → full speed VCode 14 regardless of distance (user request)
+            double headingDelta = Math.Abs(Steering.FormatAngle(desired - headingRad));
+            if (headingDelta * 180.0 / Math.PI > 30.0)
+            {
+                vcode = 14;
+            }
+            else
+            {
+                vcode = ApproachVCode(distToCurrent);
+            }
         }
 
         /// <summary>
-        /// Approach speed code from remaining distance: (int)(distMm / 500.0) clamped to [3, 14].
+        /// Two-stage approach speed law (2026-09-04 fix for "slow movement" problem #1).
         /// 
-        /// Change from /200.0 → /500.0 (2026-09-04): fixes problem #1 "slow point-to-point".
-        /// Old formula: dist 500mm → VCode 3 (~67 mm/s) → nearly stuck.
-        ///   This made fish crawl through multi-segment paths because each segment was
-        ///   only a few hundred mm long.
-        /// New formula: dist 500mm → VCode 1 → still floors at 3, so same minimum speed,
-        ///   BUT mid-range distances now cruise fast: 800mm → VCode 4 vs old VCode 4.
-        ///   Key gain: 1000mm → VCode 8 (vs old VCode 5, 1.6× faster).
-        ///
-        /// Floor stays at 3 (not 0 or 1): per original analysis, VCode 1 produces
-        /// ~10 mm/s which is effectively dead in water (zero tail-beat response).
-        /// VCode 2-3 do swim demonstrably. Floor 3 gives ~67 mm/s at very close range,
-        /// matching the ~170 mm turn-radius requirement near waypoints.
-        ///
-        /// Post-dead-zone-fix safety: Steering.GetTCode() dead-zone compensation
-        /// (Task 1) makes turns responsive even at VCode 3+, so shorter corridors
-        /// no longer cause orbital overshoot that forced the conservative /200.0.
-        /// If collisions occur in tight bends, tune toward /350 as a middle ground.
+        /// OLD: int v = (int)(distMm / 500.0); floor=3 → dist 2000mm → VCode 3 (~67 mm/s) = stuck!
+        ///   Root cause: flat denominator made fish crawl through multi-segment paths where each
+        ///   segment was only a few hundred mm long.
+        /// 
+        /// NEW: Two-stage curve
+        ///   [CruiseDist..∞) → full throttle VCode=14 (~780 mm/s) — cross-field sprints
+        ///   [BrakeDist..CruiseDist] → linear interpolation V3→V14 — smooth deceleration
+        ///   [0..BrakeDist) → floor at VCode=3 (~67 mm/s) — precise waypoint approach
+        /// 
+        /// Why brake at 200mm? Floor=3 gives ~67 mm/s which + fixed TCode-turning produces a
+        /// minimum turning radius of ~170mm. Obstacle corridors after inflation are 300mm+ wide,
+        /// so this is safe. The dead-zone fix (Steering ×2.5 exponent) makes turns responsive
+        /// even at VCode 3+, so tighter waypoints no longer cause overshoot.
         /// </summary>
-        private static int ApproachVCode(double distMm)
+        public static int ApproachVCode(double distMm)
         {
-            int v = (int)(distMm / 500.0);
-            if (v < 3)
+            if (distMm >= CruiseDistMm)
             {
-                v = 3;
+                return 14;  // Full cruise throttle — cross-field sprints!
             }
-            if (v > 14)
+            if (distMm <= BrakeDistMm)
             {
-                v = 14;
+                return 3;   // Precision approach near waypoint
             }
-            return v;
+            // Linear interpolation between BrakeDist (V3) and CruiseDist (V14)
+            double ratio = (distMm - BrakeDistMm) / (CruiseDistMm - BrakeDistMm);
+            return 3 + (int)(ratio * 11.0);  // 14 - 3 = 11 steps
         }
 
         /// <summary>

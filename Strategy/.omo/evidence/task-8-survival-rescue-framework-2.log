@@ -1,0 +1,27 @@
+Build log for Task 8 — StrategyExtremeRescue Release artifact
+Generated: 2026-08-22
+
+Command:
+  "D:\microsoft visual studio\MSBuild\Current\Bin\MSBuild.exe" ^
+    "E:\progaram\URWPGSim2D\Strategy\StrategyExtremeRescue\StrategyExtremeRescue.csproj" ^
+    /p:Configuration=Release /t:Rebuild /v:normal
+
+Result: 已成功生成 (Build succeeded)
+  0 个错误 (0 errors)
+  0 个警告 (0 warnings)
+
+Output DLL:
+  E:\progaram\URWPGSim2D\Strategy\StrategyExtremeRescue\bin\Release\StrategyExtremeRescue.dll
+  Size: 11776 bytes
+  Built: 2026-08-22 17:53
+
+MSBuild version: 18.8.2+ce25c0108 (.NET Framework MSBuild)
+Compiler: Roslyn csc.exe (langversion:7.3, target:library, platform:x86, optimize+, nostdlib+)
+Target framework: .NET Framework 3.5 (v2.0 mscorlib + v3.5 System.Core)
+Platform: x86 (explicit PlatformTarget in Release configuration)
+
+Note: StrategyExtremeRescue.csproj was created fresh for this task (derived from StrategyBallMoving
+template) with <PlatformTarget>x86</PlatformTarget> added to the Release PropertyGroup. This
+eliminates the MSB3270 warnings present in StrategyFightForLive.
+
+DLL existence verified post-build: Test-Path returned True

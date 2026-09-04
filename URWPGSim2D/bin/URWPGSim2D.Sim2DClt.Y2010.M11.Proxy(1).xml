@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>URWPGSim2D.Sim2DClt.Y2010.M11.Proxy</name>
+    </assembly>
+    <members>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Sim2DCltState.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current Sim2DCltState to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Sim2DCltState.Clone">
+             <summary>
+            Clones Sim2DCltState
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Sim2DCltState.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current Sim2DCltState to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Sim2DCltState.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes Sim2DCltState
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized Sim2DCltState</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,System.String,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="service">service path</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DClt.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+    </members>
+</doc>

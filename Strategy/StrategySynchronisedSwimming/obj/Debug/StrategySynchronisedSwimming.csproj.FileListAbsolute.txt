@@ -1,0 +1,26 @@
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.dll
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.pdb
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\Microsoft.Xna.Framework.dll
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.dll
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.dll
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.pdb
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.dll
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Strategy\StrategySynchronisedSwimming\bin\Debug\StrategySynchronisedSwimming.pdb
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Strategy\StrategySynchronisedSwimming\obj\Debug\ResolveAssemblyReference.cache
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.dll
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Strategy\StrategySynchronisedSwimming\obj\Debug\StrategySynchronisedSwimming.pdb

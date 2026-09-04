@@ -1,0 +1,135 @@
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator.4094A9A0E02D42B\桌面\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator\桌面\URWPGSim2D1.2.123.20110RC2SrcAll修改\URWPGSim2D1.2.123.20110RC2SrcAll\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Documents and Settings\Administrator\桌面\机器鱼课程文件\机器鱼课程文件\机器鱼课程文件\URWPGSim2D.20120826Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResGen.read.1.tlog
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResGen.write.1.tlog
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20141220Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Users\Administrator\Desktop\机器人项目\URWPGSim2D.20140423Src\URWPGSim2D.20141221Src\URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+F:\资源\2D仿真\平台\20150401-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\ResolveAssemblyReference.cache
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\GenerateResource-ResGen.read.1.tlog
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\GenerateResource-ResGen.write.1.tlog
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+F:\资源\2D仿真\平台\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20150503-URWPGSim2D-final\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20150503-URWPGSim2D-final\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20150503-URWPGSim2D-final\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20171222-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20171222-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20171222-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20171222-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20171222-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20171222-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20171222-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csprojResolveAssemblyReference.cache
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Users\王梅娟\Desktop\20171230-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csprojResolveAssemblyReference.cache
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+C:\Users\王梅娟\Desktop\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20180516-URWPGSim2D\20180516-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20180714-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20180716-URWPGSim2D\20180714-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csprojResolveAssemblyReference.cache
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.Cache
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\工作\20180716-URWPGSim2D\20180716-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.exe
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\URWPGSim2D\bin\URWPGSim2D.Screencast.pdb
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csprojAssemblyReference.cache
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Properties.Resources.resources
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.Screencast.resources
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.GenerateResource.cache
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\Screencast.csproj.CoreCompileInputs.cache
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.exe
+D:\21Fish\Fish\2D仿真比赛平台\20180718-URWPGSim2D\Screencast\Screencast\obj\Debug\URWPGSim2D.Screencast.pdb

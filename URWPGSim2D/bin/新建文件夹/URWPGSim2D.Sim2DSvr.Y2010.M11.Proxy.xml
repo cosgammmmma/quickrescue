@@ -1,0 +1,359 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>URWPGSim2D.Sim2DSvr.Y2010.M11.Proxy</name>
+    </assembly>
+    <members>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current HeartBeatRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatRequest.Clone">
+             <summary>
+            Clones HeartBeatRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current HeartBeatRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes HeartBeatRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized HeartBeatRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatResponse.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current HeartBeatResponse to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatResponse.Clone">
+             <summary>
+            Clones HeartBeatResponse
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatResponse.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current HeartBeatResponse to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.HeartBeatResponse.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes HeartBeatResponse
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized HeartBeatResponse</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.TeamIdChangedRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current TeamIdChangedRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.TeamIdChangedRequest.Clone">
+             <summary>
+            Clones TeamIdChangedRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.TeamIdChangedRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current TeamIdChangedRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.TeamIdChangedRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes TeamIdChangedRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized TeamIdChangedRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientAnnounceDecisionRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientAnnounceDecisionRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientAnnounceDecisionRequest.Clone">
+             <summary>
+            Clones ClientAnnounceDecisionRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientAnnounceDecisionRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientAnnounceDecisionRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientAnnounceDecisionRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientAnnounceDecisionRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientAnnounceDecisionRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientBaseState.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientBaseState to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientBaseState.Clone">
+             <summary>
+            Clones ClientBaseState
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientBaseState.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientBaseState to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.ClientBaseState.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientBaseState
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientBaseState</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,System.String,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="service">service path</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.ClientBase.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientAnnounceUriRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriRequest.Clone">
+             <summary>
+            Clones ClientAnnounceUriRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientAnnounceUriRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientAnnounceUriRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientAnnounceUriRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriResponse.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientAnnounceUriResponse to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriResponse.Clone">
+             <summary>
+            Clones ClientAnnounceUriResponse
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriResponse.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientAnnounceUriResponse to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceUriResponse.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientAnnounceUriResponse
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientAnnounceUriResponse</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceTeamNameRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientAnnounceTeamNameRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceTeamNameRequest.Clone">
+             <summary>
+            Clones ClientAnnounceTeamNameRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceTeamNameRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientAnnounceTeamNameRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceTeamNameRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientAnnounceTeamNameRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientAnnounceTeamNameRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceReadyRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current ClientAnnounceReadyRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceReadyRequest.Clone">
+             <summary>
+            Clones ClientAnnounceReadyRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceReadyRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current ClientAnnounceReadyRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.ClientAnnounceReadyRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes ClientAnnounceReadyRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized ClientAnnounceReadyRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionTypeChangedRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current CompetitionTypeChangedRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionTypeChangedRequest.Clone">
+             <summary>
+            Clones CompetitionTypeChangedRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionTypeChangedRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current CompetitionTypeChangedRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionTypeChangedRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes CompetitionTypeChangedRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized CompetitionTypeChangedRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionControlButtonRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current CompetitionControlButtonRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionControlButtonRequest.Clone">
+             <summary>
+            Clones CompetitionControlButtonRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionControlButtonRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current CompetitionControlButtonRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.CompetitionControlButtonRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes CompetitionControlButtonRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized CompetitionControlButtonRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.MissionParaRequest.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current MissionParaRequest to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.MissionParaRequest.Clone">
+             <summary>
+            Clones MissionParaRequest
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.MissionParaRequest.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current MissionParaRequest to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.MissionParaRequest.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes MissionParaRequest
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized MissionParaRequest</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Sim2DSvrState.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+             <summary>
+            Copies the data member values of the current Sim2DSvrState to the specified target object
+            </summary>
+            <param name="target">target object (must be an instance of)</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Sim2DSvrState.Clone">
+             <summary>
+            Clones Sim2DSvrState
+            </summary>
+            <returns>cloned value</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Sim2DSvrState.Serialize(System.IO.BinaryWriter)">
+             <summary>
+            Serializes the data member values of the current Sim2DSvrState to the specified writer
+            </summary>
+            <param name="writer">the writer to which to serialize</param>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Sim2DSvrState.Deserialize(System.IO.BinaryReader)">
+             <summary>
+            Deserializes Sim2DSvrState
+            </summary>
+            <param name="reader">the reader from which to deserialize</param>
+            <returns>deserialized Sim2DSvrState</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,System.String,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="service">service path</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+        <member name="M:URWPGSim2D.Sim2DSvr.Proxy.Contract.CreateService(Microsoft.Dss.Services.Constructor.ConstructorPort,Microsoft.Dss.ServiceModel.Dssp.PartnerType[])">
+            <summary>Creates a new instance of the service.</summary>
+            <param name="constructorServicePort">Service constructor port</param>
+            <param name="partners">the partners of the service instance</param>
+            <returns>create service response port</returns>
+        </member>
+    </members>
+</doc>

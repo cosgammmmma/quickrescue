@@ -1,0 +1,83 @@
+{
+  "schema_version": 2,
+  "active_work_id": "survival-rescue-framework-2-b1fc23b8",
+  "works": {
+    "survival-rescue-framework-2-b1fc23b8": {
+      "work_id": "survival-rescue-framework-2-b1fc23b8",
+      "active_plan": "E:\\progaram\\URWPGSim2D\\Strategy\\.omo\\plans\\survival-rescue-framework-2.md",
+      "plan_name": "survival-rescue-framework-2",
+      "status": "completed",
+      "started_at": "2026-08-22T09:31:38.986Z",
+      "updated_at": "2026-08-22T09:58:02.542Z",
+      "session_ids": [
+        "opencode:ses_fd741a0f6ffeRaPozoluOIFfU2",
+        "opencode:ses_fd71a730bffeD2aiHr7Ol66c1H",
+        "opencode:ses_fd71a3874ffebR166ptzI617vb",
+        "opencode:ses_fd71a1131ffeHxwiVW5QAs3gXZ",
+        "opencode:ses_fd719da23ffexJoW5HvI3lVoR9"
+      ],
+      "session_origins": {
+        "opencode:ses_fd741a0f6ffeRaPozoluOIFfU2": "direct",
+        "opencode:ses_fd71a730bffeD2aiHr7Ol66c1H": "appended",
+        "opencode:ses_fd71a3874ffebR166ptzI617vb": "appended",
+        "opencode:ses_fd71a1131ffeHxwiVW5QAs3gXZ": "appended",
+        "opencode:ses_fd719da23ffexJoW5HvI3lVoR9": "appended"
+      },
+      "agent": "atlas",
+      "task_sessions": {
+        "final-wave:f1": {
+          "task_key": "final-wave:f1",
+          "task_label": "F1",
+          "task_title": "Plan compliance audit: verify each todo has evidence, each Must Have is satisfied, and no Must NOT guardrail was violated.",
+          "session_id": "opencode:ses_fd719da23ffexJoW5HvI3lVoR9",
+          "agent": "Sisyphus-Junior",
+          "category": "unspecified-high",
+          "started_at": "2026-08-22T09:56:35.669Z",
+          "status": "completed",
+          "updated_at": "2026-08-22T09:57:46.286Z",
+          "ended_at": "2026-08-22T09:57:46.286Z",
+          "elapsed_ms": 70617
+        }
+      },
+      "ended_at": "2026-08-22T09:58:02.542Z",
+      "elapsed_ms": 1583556
+    }
+  },
+  "active_plan": "E:\\progaram\\URWPGSim2D\\Strategy\\.omo\\plans\\survival-rescue-framework-2.md",
+  "started_at": "2026-08-22T09:31:38.986Z",
+  "status": "completed",
+  "updated_at": "2026-08-22T09:58:02.542Z",
+  "session_ids": [
+    "opencode:ses_fd741a0f6ffeRaPozoluOIFfU2",
+    "opencode:ses_fd71a730bffeD2aiHr7Ol66c1H",
+    "opencode:ses_fd71a3874ffebR166ptzI617vb",
+    "opencode:ses_fd71a1131ffeHxwiVW5QAs3gXZ",
+    "opencode:ses_fd719da23ffexJoW5HvI3lVoR9"
+  ],
+  "session_origins": {
+    "opencode:ses_fd741a0f6ffeRaPozoluOIFfU2": "direct",
+    "opencode:ses_fd71a730bffeD2aiHr7Ol66c1H": "appended",
+    "opencode:ses_fd71a3874ffebR166ptzI617vb": "appended",
+    "opencode:ses_fd71a1131ffeHxwiVW5QAs3gXZ": "appended",
+    "opencode:ses_fd719da23ffexJoW5HvI3lVoR9": "appended"
+  },
+  "plan_name": "survival-rescue-framework-2",
+  "task_sessions": {
+    "final-wave:f1": {
+      "task_key": "final-wave:f1",
+      "task_label": "F1",
+      "task_title": "Plan compliance audit: verify each todo has evidence, each Must Have is satisfied, and no Must NOT guardrail was violated.",
+      "session_id": "opencode:ses_fd719da23ffexJoW5HvI3lVoR9",
+      "agent": "Sisyphus-Junior",
+      "category": "unspecified-high",
+      "started_at": "2026-08-22T09:56:35.669Z",
+      "status": "completed",
+      "updated_at": "2026-08-22T09:57:46.286Z",
+      "ended_at": "2026-08-22T09:57:46.286Z",
+      "elapsed_ms": 70617
+    }
+  },
+  "agent": "atlas",
+  "ended_at": "2026-08-22T09:58:02.542Z",
+  "elapsed_ms": 1583556
+}

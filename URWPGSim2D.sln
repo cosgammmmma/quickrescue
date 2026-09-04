@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{61424527-E14D-4A5F-A526-E749AEFA8F6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sim2DSvr", "Sim2DSvr\Sim2DSvr.csproj", "{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A} = {61424527-E14D-4A5F-A526-E749AEFA8F6A}
+		{11871F42-68C3-487E-B9BA-349DEC3A1CA2} = {11871F42-68C3-487E-B9BA-349DEC3A1CA2}
+		{0D186CD8-948B-4E65-96C1-F1DD1C2B5393} = {0D186CD8-948B-4E65-96C1-F1DD1C2B5393}
+		{5C36FEE9-694A-440F-82D8-AF3789766825} = {5C36FEE9-694A-440F-82D8-AF3789766825}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConductorSvr", "ConductorSvr\ConductorSvr.csproj", "{0BBB1971-3947-4951-835E-891D1E86BF80}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6} = {0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConductorClt", "ConductorClt\ConductorClt.csproj", "{1F98FF0E-E9A5-45EC-9A0A-137F96192B0B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3} = {2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyLoader", "StrategyLoader\StrategyLoader.csproj", "{5C36FEE9-694A-440F-82D8-AF3789766825}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A} = {61424527-E14D-4A5F-A526-E749AEFA8F6A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sim2DClt", "Sim2DClt\Sim2DClt.csproj", "{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A} = {61424527-E14D-4A5F-A526-E749AEFA8F6A}
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6} = {0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}
+		{5C36FEE9-694A-440F-82D8-AF3789766825} = {5C36FEE9-694A-440F-82D8-AF3789766825}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Match", "Match\Match.csproj", "{0D186CD8-948B-4E65-96C1-F1DD1C2B5393}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A} = {61424527-E14D-4A5F-A526-E749AEFA8F6A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadget", "Gadget\Gadget.csproj", "{11871F42-68C3-487E-B9BA-349DEC3A1CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Screencast", "Screencast\Screencast\Screencast.csproj", "{86BDC710-F57D-4711-8BFA-90A50F4C4DA7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61424527-E14D-4A5F-A526-E749AEFA8F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC4CAE6-D990-492E-B37A-F3F7D1B456D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BBB1971-3947-4951-835E-891D1E86BF80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BBB1971-3947-4951-835E-891D1E86BF80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BBB1971-3947-4951-835E-891D1E86BF80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BBB1971-3947-4951-835E-891D1E86BF80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F98FF0E-E9A5-45EC-9A0A-137F96192B0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F98FF0E-E9A5-45EC-9A0A-137F96192B0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F98FF0E-E9A5-45EC-9A0A-137F96192B0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F98FF0E-E9A5-45EC-9A0A-137F96192B0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C36FEE9-694A-440F-82D8-AF3789766825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C36FEE9-694A-440F-82D8-AF3789766825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C36FEE9-694A-440F-82D8-AF3789766825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C36FEE9-694A-440F-82D8-AF3789766825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B27DDB0-79A5-4974-A4D5-97AE6CED9DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D186CD8-948B-4E65-96C1-F1DD1C2B5393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D186CD8-948B-4E65-96C1-F1DD1C2B5393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D186CD8-948B-4E65-96C1-F1DD1C2B5393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D186CD8-948B-4E65-96C1-F1DD1C2B5393}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11871F42-68C3-487E-B9BA-349DEC3A1CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11871F42-68C3-487E-B9BA-349DEC3A1CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11871F42-68C3-487E-B9BA-349DEC3A1CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11871F42-68C3-487E-B9BA-349DEC3A1CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86BDC710-F57D-4711-8BFA-90A50F4C4DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BDC710-F57D-4711-8BFA-90A50F4C4DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86BDC710-F57D-4711-8BFA-90A50F4C4DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86BDC710-F57D-4711-8BFA-90A50F4C4DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

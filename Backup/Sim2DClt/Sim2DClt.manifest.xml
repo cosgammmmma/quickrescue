@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" ?>
+<Manifest 
+    xmlns="http://schemas.microsoft.com/xw/2004/10/manifest.html"
+    xmlns:dssp="http://schemas.microsoft.com/xw/2004/10/dssp.html"
+    xmlns:clt="http://www.ursim.org/2010/11/sim2dclt.html"
+    >
+    <CreateServiceList>
+      <ServiceRecordType>
+        <dssp:Contract>http://www.ursim.org/2010/11/sim2dclt.html</dssp:Contract>
+        <dssp:PartnerList>
+          <dssp:Partner>
+            <dssp:Service>http://localhost:50000/Sim2DSvr</dssp:Service>
+            <dssp:Name>clt:Server</dssp:Name>
+          </dssp:Partner>
+        </dssp:PartnerList>
+      </ServiceRecordType>
+    </CreateServiceList>
+</Manifest>

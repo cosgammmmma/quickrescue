@@ -1,0 +1,3232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>URWPGSim2D.Common</name>
+    </assembly>
+    <members>
+        <member name="T:URWPGSim2D.Common.CollisionDetection">
+            <summary>
+            碰撞检测计算静态类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.CollisionBetweenTwoPolygons(URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon,System.Boolean)">
+            <summary>
+            对两个多边形模型进行碰撞检测，这里设第1个多边形是动态对象的模型，返回碰撞检测结果参数结构体
+            </summary>
+            <param name="polygonA">待检测的第1个多边形模型对象</param>
+            <param name="polygonB">待检测的第2个多边形模型对象</param>
+            <param name="staticStatus">第2个多边形是否是静态对象的模型</param>
+            <returns>碰撞检测结果参数结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.CollisionBetweenPolygonAndCircle(URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.Ball,System.Boolean)">
+            <summary>
+            对一个多边形和一个圆形模型进行碰撞检测，返回碰撞检测结果参数结构体
+            </summary>
+            <param name="polygon">待测多边形的模型对象</param>
+            <param name="ball">待测球的模型对象</param>
+            <param name="staticStatus">待测多边形的状态为静态或是动态</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.CollisionBetweenTwoCircles(Microsoft.Xna.Framework.Vector3,System.Int32,Microsoft.Xna.Framework.Vector3,System.Int32)">
+            <summary>
+            检测两圆形对象的碰撞情况,设定第一个圆恒为动态的
+            </summary>
+            <param name="center1">待测第一个圆的圆心点</param>
+            <param name="radius1">待测第一个圆的半径</param>
+            <param name="center2">待测第二个圆的圆心点</param>
+            <param name="radius2">待测第二个圆的半径</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.CollisionBetweenPolygonAndRoundedObstacle(URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.RoundedObstacle)">
+            <summary>
+            对一个多边形和一个圆形障碍物进行碰撞检测，返回碰撞检测结果参数结构体
+            </summary>
+            <param name="polygon">待测多边形的模型对象</param>
+            <param name="roundedObstacle">待测圆形障碍物的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.ProjectPolygonToAxis(Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.CollisionModelPolygon,System.Single@,System.Single@,Microsoft.Xna.Framework.Vector3@,Microsoft.Xna.Framework.Vector3@)">
+            <summary>
+            把多边形投影到直线上，并记录输出多边形各顶点向量和目标直线单位向量点积的最小和最大值
+            </summary>
+            <param name="axis">表示目标直线的单位向量</param>
+            <param name="polygon">碰撞检测多边形模型对象</param>
+            <param name="minDotProduct">多边形各顶点和目标直线单位向量点积的最小值 输出</param>
+            <param name="maxDotProduct">多边形各顶点和目标直线单位向量点积的最大值 输出</param>
+            <param name="minPoint">对应点积最小值的多边形顶点 输出</param>
+            <param name="maxPoint">对应点积最大值的多边形顶点 输出</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.ProjectCircleToAxis(Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.Ball,System.Single@,System.Single@)">
+            <summary>
+            把圆投影到直线上，并记录输出多边形各顶点向量和目标直线单位向量点积的最小和最大值
+            </summary>
+            <param name="axis">表示目标直线的单位向量</param>
+            <param name="ball">碰撞检测球的模型对象</param>
+            <param name="minDotProduct">球和目标直线单位向量点积的最小值 输出</param>
+            <param name="maxDotProduct">球和目标直线单位向量点积的最大值 输出</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.ProjectRoundedObstacleToAxis(Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.RoundedObstacle,System.Single@,System.Single@)">
+            <summary>
+            把圆形障碍物投影到直线上，并记录输出多边形各顶点向量和目标直线单位向量点积的最小和最大值
+            </summary>
+            <param name="axis">表示目标直线的单位向量</param>
+            <param name="roundedObstacle">碰撞检测圆形障碍物的模型对象</param>
+            <param name="minDotProduct">圆形障碍物和目标直线单位向量点积的最小值 输出</param>
+            <param name="maxDotProduct">圆形障碍物和目标直线单位向量点积的最大值 输出</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenFishAndBorder(URWPGSim2D.Common.RoboFish@,URWPGSim2D.Common.Field)">
+            <summary>
+            检测仿真鱼和仿真场地边界及球门块碰撞情况
+            </summary>
+            <param name="fish">待检测的仿真机器鱼对象引用</param>
+            <param name="field">待检测仿真场地Field对象，用到四个球门块的顶点坐标列表和四个边界坐标值</param>
+            <returns>碰撞检测结果参数结构体包括是否碰撞/碰撞作用面中的法向/碰撞作用点坐标</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.MoveDirection(Microsoft.Xna.Framework.Vector3,System.Single,Microsoft.Xna.Framework.Vector3@)">
+            <summary>
+            确定分离方向，根据物体的对象的运动方向，判断两者的分离方向，使得两者朝相离的方向运动
+            </summary>
+            <param name="NormalAxis">两物体碰撞的作用发现</param>
+            <param name="VelocityDirectionRad">A对象的速度方向</param>
+            <param name="MinimumTraslationVector">最小相交向量</param>
+            <returns>返回计算后的最小相交向量</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="PolygonABefore">初始状态的A多边形</param>
+            <param name="PolygonBBefore">初始状态B多边形</param>
+            <param name="PolygonAAfter">结束状态的A多边形</param>
+            <param name="PolygonBAfter">结束状态B多边形</param>
+            <param name="PolygonAAngleBefore">初始状态的A多边形的倾角</param>
+            <param name="PolygonBAngleBefore">初始状态的B多边形的倾角</param>
+            <param name="PolygonAAngleAfter">结束状态的A多边形的倾角</param>
+            <param name="PolygonBAngleAfter">结束状态的B多边形的倾角</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.CollisionModelPolygon,Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.Ball,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="PolygonABefore">前一周期A多边形</param>
+            <param name="BallBBeforeMm">前一周期B水球的坐标值</param>
+            <param name="PolygonAAfter">后一周期A多边形</param>
+            <param name="BallBAfter">后一周期B水球</param>
+            <param name="PolygonAAngleBefore">前一周期A多边形的倾角</param>
+            <param name="BallBAngleBefore">前一周期B水球的倾角</param>
+            <param name="PolygonAAngleAfter">后一周期A多边形的倾角</param>
+            <param name="BallBAngleAfter">后一周期B水球的倾角</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.RoundedObstacle,URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="RoundObstacleA">静态圆形障碍物A</param>
+            <param name="PolygonBBefore">前一周期B多边形</param>
+            <param name="PolygonBAfter">后一周期B多边形</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.RectangularObstacle,URWPGSim2D.Common.CollisionModelPolygon,URWPGSim2D.Common.CollisionModelPolygon)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="RecObstacleA">静态方形障碍物A</param>
+            <param name="PolygonBBefore">前一周期B多边形</param>
+            <param name="PolygonBAfter">后一周期B多边形</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.Ball,URWPGSim2D.Common.Ball)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="BallABeforeMm">前一周期A水球的球心位置坐标</param>
+            <param name="BallBBeforeMm">前一周期B水球</param>
+            <param name="BallAAfter">后一周期A水球</param>
+            <param name="BallBAfter">后一周期B水球</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.RoundedObstacle,Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.Ball)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="RoundObstacleA">静态圆形障碍物A</param>
+            <param name="BallBBeforeMm">前一周期B水球的球心坐标</param>
+            <param name="BallBAfter">后一周期B水球</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.IsTunneling(URWPGSim2D.Common.RectangularObstacle,Microsoft.Xna.Framework.Vector3,URWPGSim2D.Common.Ball)">
+            <summary>
+            判断是否发生完全穿越现象，此环节发生在分离轴理论（SAT）判断后
+            如果发生完全穿越，则跳转至二分法；如果没有发生完全穿越，则跳出此次碰撞检测
+            </summary>
+            <param name="RecObstacleA">静态方形障碍物A</param>
+            <param name="BallBBeforeMm">前一周期B水球的球心坐标</param>
+            <param name="BallBAfter">后一周期B水球</param>
+            <returns>返回布尔值，是否发生完全穿越现象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.Dichotomyball(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,System.Single,System.Single)">
+            <summary>
+            仿真球的二分法 added by zhangjin 20120311
+            </summary>
+            <param name="StartPosition">仿真模型的起始位置</param>
+            <param name="EndPosition">仿真模型的终止位置</param>
+            <param name="StartTime">仿真模型的起始位置时刻</param>
+            <param name="EndTime">仿真模型的终止位置时刻</param> 
+            <returns>返回二分法结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.Dichotomyfish(URWPGSim2D.Common.RoboFish,URWPGSim2D.Common.RoboFish,System.Single,System.Single)">
+            <summary>
+            仿真鱼的二分法 added by zhangjin 20120311
+            </summary>
+            <param name="StartFish">仿真机器鱼的初始状态</param>
+            <param name="EndFish">仿真机器鱼的终止状态</param>
+            <param name="StartTime">仿真模型的起始位置时刻</param>
+            <param name="EndTime">仿真模型的终止位置时刻</param>
+            <returns>返回二分法结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.Dichotomyfish2(URWPGSim2D.Common.RoboFish,URWPGSim2D.Common.RoboFish,System.Single,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="StartFish"></param>
+            <param name="EndFish"></param>
+            <param name="StartTime"></param>
+            <param name="EndTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.Quadrant(System.Single)">
+            <summary>
+            判断角度在几象限
+            </summary>
+            <param name="Angle">角度值</param>
+            <returns>返回象限数，1,2,3,4</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.EulerToFourVar(URWPGSim2D.Common.EulerAngle)">
+            <summary>
+            欧拉角转换为四元函数 added by zhangjin 20120311
+            </summary>
+            <param name="eulerangle">与X轴的夹角</param>
+            <returns>返回四元函数结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.FourVarToEuler(URWPGSim2D.Common.FourVariables)">
+            <summary>
+            四元函数转换为欧拉角 added by zhangjin 20120311
+            </summary>
+            <param name="fvar"></param>
+            <returns>返回四元函数结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.Slerp(URWPGSim2D.Common.FourVariables,URWPGSim2D.Common.FourVariables,System.Single)">
+            <summary>
+            四元数差值 added by zhangjin 20120311
+            </summary>
+            <param name="startFourVar">前一周期的四元数</param>
+            <param name="endFourVar">当前周期的四元数</param>
+            <param name="time">插入时刻</param>
+            <returns>返回二分法结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenFishAndBall(URWPGSim2D.Common.RoboFish@,URWPGSim2D.Common.Ball@)">
+            <summary>
+            检测仿真机器鱼和仿真水球的碰撞情况
+            </summary>
+            <param name="fish">待检测的仿真机器鱼对象引用</param>
+            <param name="ball">待检测的仿真水球对象引用</param>
+            <returns>碰撞检测结果参数结构体包括是否碰撞/碰撞作用面中的法向/碰撞作用点坐标</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenTwoFishes(URWPGSim2D.Common.RoboFish@,URWPGSim2D.Common.RoboFish@)">
+            <summary>
+            检测两条仿真机器鱼之间碰撞情况
+            </summary>
+            <param name="fish1">待检测的第1条仿真机器鱼对象引用</param>
+            <param name="fish2">待检测的第2条仿真机器鱼对象引用</param>
+            <returns>碰撞检测结果参数结构体包括是否碰撞/碰撞作用面中的法向/碰撞作用点坐标</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenBallAndBorder(URWPGSim2D.Common.Ball@,URWPGSim2D.Common.Field)">
+            <summary>
+            检测仿真水球和仿真场地边界及球门块碰撞情况
+            </summary>
+            <param name="ball">待检测的仿真水球对象引用</param>
+            <param name="field">待检测仿真场地Field对象，用到四个球门块的顶点坐标列表和四个边界坐标值</param>
+            <returns>碰撞检测结果参数结构体包括是否碰撞/碰撞作用面中的法向/碰撞作用点坐标</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenFishAndObstacle(URWPGSim2D.Common.RoboFish@,URWPGSim2D.Common.RoundedObstacle)">
+            <summary>
+            检测鱼和圆形障碍物之间的碰撞情况
+            </summary>
+            <param name="fish">待测鱼的模型对象</param>
+            <param name="roundedObstacle">待测圆形障碍物的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenFishAndObstacle(URWPGSim2D.Common.RoboFish@,URWPGSim2D.Common.RectangularObstacle)">
+            <summary>
+            检测鱼和方形障碍物之间的碰撞情况
+            </summary>
+            <param name="fish">待测鱼的模型对象</param>
+            <param name="rectangularObstacle">待测方形障碍物的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenBallAndObstacle(URWPGSim2D.Common.Ball@,URWPGSim2D.Common.RoundedObstacle)">
+            <summary>
+            检测球和圆形障碍物之间的碰撞情况
+            </summary>
+            <param name="ball">待测球的模型对象</param>
+            <param name="roundedObstacle">待测圆形障碍物的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenBallAndObstacle(URWPGSim2D.Common.Ball@,URWPGSim2D.Common.RectangularObstacle)">
+            <summary>
+            检测球和方形障碍物之间的碰撞情况
+            </summary>
+            <param name="ball">待测球的模型对象</param>
+            <param name="rectangularObstacle">待测方形障碍物的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.DetectCollisionBetweenTwoBalls(URWPGSim2D.Common.Ball@,URWPGSim2D.Common.Ball@)">
+            <summary>
+            检测两球之间的碰撞情况
+            </summary>
+            <param name="ballA">待测第一个球的模型对象</param>
+            <param name="ballB">待测第二个球的模型对象</param>
+            <returns>返回碰撞检测结果结构体</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionDetection.CoordinateTransformation(Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,System.Single)">
+            <summary>
+            两坐标系间转换
+            </summary>
+            <param name="PointA">A点在原坐标系中的坐标值</param>
+            <param name="OriginalPoint">现坐标系原点在原坐标系中的坐标值</param>
+            <param name="Angle">现坐标系和原坐标系之间的夹角，和平台角度值取值方法一致</param>
+            <returns>返回在现坐标系中A点的坐标值</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.CollisionDetectionResult">
+            <summary>
+            碰撞检测结果参数结构体 modified by renjing 20120305
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.Intersect">
+            <summary>
+            定义两多边形是否相交
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.MinimumTranslationVector">
+            <summary>
+            两相撞物体，重叠的矢量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.NormalAxis">
+            <summary>
+            碰撞作用面中的法线方向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.ActionPoint">
+            <summary>
+            碰撞作用点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.CollisionTime">
+            <summary>
+            碰撞时刻
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.LeafNodeA">
+            <summary>
+            A对象的叶节点，如果A对象不是机器鱼，则该值为0；如果是机器鱼，取值范围是[1,8]
+            1~8依次为，左胸鳍、躯干、右胸鳍、第一尾关节、第二尾关节、第三尾关节、左半尾鳍、右半尾鳍
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionDetectionResult.LeafNodeB">
+            <summary>
+            B对象的叶节点，如果A对象不是机器鱼，则该值为0；如果是机器鱼，取值范围是[1,8]
+            1~8依次为，左胸鳍、躯干、右胸鳍、第一尾关节、第二尾关节、第三尾关节、左半尾鳍、右半尾鳍
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.CollisionModelPolygon">
+            <summary>
+            碰撞检测多边形模型类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionModelPolygon.#ctor">
+            <summary>
+            无参数的构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionModelPolygon.#ctor(System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3})">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="vertices">多边形模型顶点列表，顶点为xna.Vector3类型</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionModelPolygon.BuildEdges">
+            <summary>
+            根据多边形的顶点列表建立边向量列表
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.CollisionModelPolygon.Edges">
+            <summary>
+            多边形的边向量列表
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.CollisionModelPolygon.Points">
+            <summary>
+            多边形的顶点列表
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.CollisionModelPolygon.Center">
+            <summary>
+            多边形的质心
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionModelPolygon.Offset(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            将当前对象代表的多边形模型平移一个xna.Vector3类型的向量三个分量距离（可正可负）
+            </summary>
+            <param name="v"></param>
+        </member>
+        <member name="M:URWPGSim2D.Common.CollisionModelPolygon.Offset(System.Single,System.Single,System.Single)">
+            <summary>
+            将当前对象代表的多边形模型在X/Y/Z方向分别平移x/y/z距离（可正可负）
+            </summary>
+            <param name="x">X方向平移的距离（可正可负）</param>
+            <param name="y">Y方向平移的距离（可正可负）</param>
+            <param name="z">Z方向平移的距离（可正可负）</param>
+        </member>
+        <member name="T:URWPGSim2D.Common.DichotomyResult">
+            <summary>
+            二分法结果参数结构体
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidPositionMm">
+            <summary>
+            中间点坐标
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidBodyDirectionRad">
+            <summary>
+            中间点鱼体朝向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidTailToBodyAngle1">
+            <summary>
+            中间点鱼尾第一关节相对鱼体的朝向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidTailToBodyAngle2">
+            <summary>
+            中间点鱼尾第二关节相对鱼体的朝向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidTailToBodyAngle3">
+            <summary>
+            中间点鱼尾第三关节相对鱼体的朝向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidTime">
+            <summary>
+            中间点时刻
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.DichotomyResult.MidRoboFish">
+            <summary>
+            机器鱼中间状态
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.FourVariables">
+            <summary>
+            四元函数结构体
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FourVariables.s">
+            <summary>
+            四元数的旋转角度量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FourVariables.x">
+            <summary>
+            四元数旋转轴i的分量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FourVariables.y">
+            <summary>
+            四元数旋转轴j的分量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FourVariables.z">
+            <summary>
+            四元数旋转轴k的分量
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.EulerAngle">
+            <summary>
+            欧拉角结构体
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.EulerAngle.alpha">
+            <summary>
+            物体朝向与X轴的夹角
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.EulerAngle.beta">
+            <summary>
+            物体朝向与Y轴的夹角
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.EulerAngle.gama">
+            <summary>
+            物体朝向与Z轴的夹角
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.UrwpgSimHelper">
+            <summary>
+            URWPGSim项目需要用到的辅助功能静态类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Max(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            求4个值的int序列的最大值并标出最大值的序号（0,1,2,3）
+            </summary>
+            <param name="value1">第0号int值</param>
+            <param name="value2">第1号int值</param>
+            <param name="value3">第2号int值</param>
+            <param name="value4">第3号int值</param>
+            <param name="seq">最大值的序号（0,1,2,3）</param>
+            <returns>最大值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Min(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            求4个值的int序列的最小值并标出最小值的序号（0,1,2,3）
+            </summary>
+            <param name="value1">第0号整数</param>
+            <param name="value2">第1号整数</param>
+            <param name="value3">第2号整数</param>
+            <param name="value4">第3号整数</param>
+            <param name="seq">最小值的序号（0,1,2,3）</param>
+            <returns>最小值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Max(System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求4个值的float序列的最大值并标出最大值的序号（0,1,2,3）
+            </summary>
+            <param name="value1">第0号整数</param>
+            <param name="value2">第1号整数</param>
+            <param name="value3">第2号整数</param>
+            <param name="value4">第3号整数</param>
+            <param name="seq">最大值的序号（0,1,2,3）</param>
+            <returns>最大值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Min(System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求4个值的float序列的最小值并标出最小值的序号（0,1,2,3）
+            </summary>
+            <param name="value1">第0号float值</param>
+            <param name="value2">第1号float值</param>
+            <param name="value3">第2号float值</param>
+            <param name="value4">第3号float值</param>
+            <param name="seq">最小值的序号（0,1,2,3）</param>
+            <returns>最小值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Max(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求5个值的float序列的最大值并标出最大值的序号（0,1,2,3,4）
+            </summary>
+            <param name="value1">第0号整数</param>
+            <param name="value2">第1号整数</param>
+            <param name="value3">第2号整数</param>
+            <param name="value4">第3号整数</param>
+            <param name="value5">第4号整数</param>
+            <param name="seq">最大值的序号（0,1,2,3,4）</param>
+            <returns>最大值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Min(System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求5个值的float序列的最小值并标出最小值的序号（0,1,2,3,4）
+            </summary>
+            <param name="value1">第0号float值</param>
+            <param name="value2">第1号float值</param>
+            <param name="value3">第2号float值</param>
+            <param name="value4">第3号float值</param>
+            <param name="value5">第4号float值</param>
+            <param name="seq">最小值的序号（0,1,2,3,4）</param>
+            <returns>最小值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Max(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求7个值的float序列的最大值并标出最大值的序号（0,1,2,3,4,5,6）
+            </summary>
+            <param name="value1">第0号整数</param>
+            <param name="value2">第1号整数</param>
+            <param name="value3">第2号整数</param>
+            <param name="value4">第3号整数</param>
+            <param name="value5">第4号整数</param>
+            <param name="value6">第5号整数</param>
+            <param name="value7">第6号整数</param>
+            <param name="seq">最大值的序号（0,1,2,3,4,5,6）</param>
+            <returns>最大值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.Min(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32@)">
+            <summary>
+            求7个值的float序列的最小值并标出最小值的序号（0,1,2,3,4,5,6）
+            </summary>
+            <param name="value1">第0号float值</param>
+            <param name="value2">第1号float值</param>
+            <param name="value3">第2号float值</param>
+            <param name="value4">第3号float值</param>
+            <param name="value5">第4号float值</param>
+            <param name="value6">第5号float值</param>
+            <param name="value7">第6号float值</param>
+            <param name="seq">最小值的序号（0,1,2,3,4,5,6）</param>
+            <returns>最小值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.CoordinateTransformation(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single@,System.Single@)">
+            <summary>
+            本地坐标系到世界坐标系（仿真场地中心为原点，向右为正X，向下为Z的坐标系）的变换
+            </summary>
+            <param name="theta">本地坐标系正X在世界坐标系中的角度值</param>
+            <param name="xLocalOri">输入参数，本地坐标系原点在世界坐标系下的X坐标值</param>
+            <param name="zLocalOri">输入参数，本地坐标系原点在世界坐标系下的Z坐标值</param>
+            <param name="xLocal">输入参数，待变换坐标的点在本地坐标系下的X坐标值</param>
+            <param name="zLocal">输入参数，待变换坐标的点在本地坐标系下的Z坐标值</param>
+            <param name="xWorld">输出参数，待变换坐标的点在世界坐标系下的X坐标值</param>
+            <param name="zWorld">输出参数，待变换坐标的点在世界坐标系下的Z坐标值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.CoordinateTransformation(System.Single,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3@)">
+            <summary>
+            本地坐标系到世界坐标系（仿真场地中心为原点，向右为正X，向下为Z的坐标系）的变换
+            </summary>
+            <param name="theta">本地坐标系X轴在世界坐标系中的角度值</param>
+            <param name="localOri">输入参数，本地坐标系原点在世界坐标系下的xna.Vector3坐标值</param>
+            <param name="local">输入参数，待变换坐标的点在本地坐标系下的xna.Vector3坐标值</param>
+            <param name="world">输出参数，待变换坐标的点在世界坐标系下的xna.Vector3坐标值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.CoordinateTransformation(System.Single,System.Single,System.Single,System.Single@,System.Single@,System.Single,System.Single)">
+            <summary>
+            世界坐标系（仿真场地中心为原点，向右为正X，向下为Z的坐标系）到本地坐标系的变换
+            </summary>
+            <param name="theta">本地坐标系正X在世界坐标系中的角度值</param>
+            <param name="xLocalOri">输入参数，本地坐标系原点在世界坐标系下的X坐标值</param>
+            <param name="zLocalOri">输入参数，本地坐标系原点在世界坐标系下的Z坐标值</param>
+            <param name="xLocal">输出参数，待变换坐标的点在本地坐标系下的X坐标值</param>
+            <param name="zLocal">输出参数，待变换坐标的点在本地坐标系下的Z坐标值</param>
+            <param name="xWorld">输入参数，待变换坐标的点在世界坐标系下的X坐标值</param>
+            <param name="zWorld">输入参数，待变换坐标的点在世界坐标系下的Z坐标值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.CoordinateTransformation(System.Single,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3@,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            世界坐标系（仿真场地中心为原点，向右为正X，向下为Z的坐标系）到本地坐标系的变换
+            </summary>
+            <param name="theta">本地坐标系X轴在世界坐标系中的角度值</param>
+            <param name="localOri">输入参数，本地坐标系原点在世界坐标系下的xna.Vector3坐标值</param>
+            <param name="local">输出参数，待变换坐标的点在本地坐标系下的xna.Vector3坐标值</param>
+            <param name="world">输入参数，待变换坐标的点在世界坐标系下的xna.Vector3坐标值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.ParametersCheckingRoboFish(URWPGSim2D.Common.RoboFish@)">
+            <summary>
+            检查仿真机器鱼的位置参数合法性 若超出场地则调整到场地内
+            </summary>
+            <param name="obj">待检查位置参数合法性的方形障碍物对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.ParametersCheckingBall(URWPGSim2D.Common.Ball@)">
+            <summary>
+            检查仿真水球位置参数合法性 若超出场地则调整到场地内
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.ParametersCheckingObstacle(URWPGSim2D.Common.RectangularObstacle@)">
+            <summary>
+            检查仿真方形障碍物的尺寸和位置参数合法性 若超出场地则调整到场地内
+            </summary>
+            <param name="obj">待检查尺寸和位置参数合法性的方形障碍物对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.UrwpgSimHelper.ParametersCheckingObstacle(URWPGSim2D.Common.RoundedObstacle@)">
+            <summary>
+            检查仿真圆形障碍物的尺寸和位置参数合法性 若超出场地则调整到场地内
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:URWPGSim2D.Common.SysConfig">
+            <summary>
+            系统参数配置xml文件处理类 by chenwei 20101106
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.Instance">
+            <summary>
+            创建或获取该类的唯一实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.release">
+            <summary>
+            销毁该类的唯一实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:URWPGSim2D.Common.SysConfig._configDoc">
+            <summary>
+            缓存配置文件的XmlDocument对象
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.#ctor">
+            <summary>
+             构造函数中尝试加载配置文件，不成功则创建默认配置文件
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.DefautConfigFileWriter">
+            <summary>
+            系统参数默认配置Xml文件写操作方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.MyXmlReader(System.String)">
+            <summary>
+            根据给定的配置参数名读取配置参数值
+            </summary>
+            <param name="strKeyName">string类型的配置参数名称</param>
+            <returns>string类型的配置参数值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.GetXmlNode(System.String)">
+            <summary>
+            根据给定的配置参数名读取配置参数值
+            </summary>
+            <param name="xpath">所要找的节点的xpath</param>
+            <returns>返回指定节点，找不到返回null</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.GetValue(System.String)">
+            <summary>
+            根据给定的xpath获取属性值
+            </summary>
+            <param name="xpath">所要找的属性的xpath</param>
+            <returns>返回指定属性值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.AddXmlNode(System.Xml.XmlNode,System.String)">
+            <summary>
+            为父节点插入新节点
+            </summary>
+            <param name="parentNode">父节点，即所要插入的位置</param>
+            <param name="nodeName">所要生成的新节点名称</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.SysConfig.AddXmElements(System.Xml.XmlNode,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            为父节点插入多个子元素
+            </summary>
+            <param name="parentNode">父节点，即所要插入的位置</param>
+            <param name="dic">key是属性名，value是属性值</param>
+        </member>
+        <member name="T:URWPGSim2D.Common.SimEnvironment">
+            <summary>
+            仿真环境基类，所有具体使命（比赛或实验项目）使用的环境类必须继承该类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.FieldInfo">
+            <summary>
+            仿真环境中仿真场地
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.Balls">
+            <summary>
+            仿真环境中仿真水球列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.ObstaclesRound">
+            <summary>
+            仿真环境中仿真圆形障碍物列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.ObstaclesRect">
+            <summary>
+            仿真环境中仿真方形障碍物列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.DynamicRect">
+            <summary>
+            仿真环境中动态仿真方形障碍物列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.Channels">
+            <summary>
+            仿真环境中仿真通道列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.SimEnvironment.HtEnvVariables">
+            <summary>
+            具体仿真环境类即<see cref="T:URWPGSim2D.Common.SimEnvironment">SimEnvironment</see>类的子类需要给策略传递的变量名和值对
+            使用哈希表<see cref="T:System.Collections.Hashtable">Hashtable</see>存储需要传递的键值对
+            键（变量名）和值（变量值）均用string类型表示
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.SimEnvironment.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.SimEnvironment.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.SimEnvironment.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.SimEnvironment.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.Field">
+            <summary>
+            仿真比赛场地数据类
+            </summary>
+            <remarks>无get和set以外实现逻辑的数据成员可使用自动实现的属性，
+            需要在Dss Service之间传递的属性均置以Attribute[DataMember]</remarks>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.Instance">
+            <summary>
+            创建或获取该类的唯一实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.#ctor">
+            <summary>
+            默认构造函数从配置文件中读取可配置参数并计算出需要计算的参数
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ScaleMmToPix">
+            <summary>
+            毫米向像素转化的比例因子（**待求**），单位毫米每像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ScaleMmToPixX">
+            <summary>
+            X方向毫米向像素转化的比例因子（**待求**），单位毫米每像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ScaleMmToPixZ">
+            <summary>
+            Z方向毫米向像素转化的比例因子（**待求**），单位毫米每像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldCenterXPix">
+            <summary>
+            比赛场地中心点在绘图容器PictureBox中的X方向屏幕坐标（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldCenterZPix">
+            <summary>
+            比赛场地中心点在绘图容器PictureBox中的Z方向屏幕坐标（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.TabControlLengthXPix">
+            <summary>
+            选项卡控件X方向上的屏幕长度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.TabControlLengthZPix">
+            <summary>
+            选项卡控件Z方向上的屏幕长度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldInnerBorderPix">
+            <summary>
+            比赛场地内边界的屏幕宽度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldOuterBorderPix">
+            <summary>
+            比赛场地外边界的屏幕宽度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.SpanBetweenFieldAndTabControlPix">
+            <summary>
+            比赛场地和选项卡控件之间空隙的屏幕宽度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FormPaddingPix">
+            <summary>
+            窗体内边距的屏幕宽度（**配置**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.PictureBoxXPix">
+            <summary>
+            图片箱X方向上的屏幕宽度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.PictureBoxZPix">
+            <summary>
+            图片箱Z方向上的屏幕宽度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FormLengthXPix">
+            <summary>
+            窗体X方向上的屏幕宽度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FormLengthZPix">
+            <summary>
+            窗体Z方向上的屏幕宽度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthXPix">
+            <summary>
+            比赛场地X方向上的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthZPix">
+            <summary>
+            比赛场地Z方向上的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalWidthPix">
+            <summary>
+            球门长边（沿Z方向）的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalDepthPix">
+            <summary>
+            球门短边（沿X方向）的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalBlockWidthPix">
+            <summary>
+            球门块长边（沿Z方向）的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalBlockDepthPix">
+            <summary>
+            球门块短边（沿X方向）的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ForbiddenZoneLengthZPix">
+            <summary>
+            禁区Z方向的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ForbiddenZoneLengthXPix">
+            <summary>
+            禁区X方向的屏幕长度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.CenterCircleRadiusPix">
+            <summary>
+            中心圆的屏幕半径（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.MovingCircleRadiusPix">
+            <summary>
+            搬运圆的屏幕半径（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ObstacleCircleRadiusPix">
+            <summary>
+            障碍越野用圆的屏幕半径（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.OffsetHeightPix">
+            <summary>
+            偏移量高度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.OffsetWidthPix">
+            <summary>
+            偏移量宽度（**待求**），单位像素
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthXMm">
+            <summary>
+            比赛场地X方向上的实际长度（**配置或界面修改**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthZMm">
+            <summary>
+            比赛场地Z方向上的实际长度（**配置或界面修改**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthXOriMm">
+            <summary>
+            比赛场地X方向上的实际长度最初配置值（**配置文件中的值**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.FieldLengthZOriMm">
+            <summary>
+            比赛场地Z方向上的实际长度最初配置值（**配置文件中的值**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalWidthMm">
+            <summary>
+            球门长边（正置沿Z方向）的实际长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.GoalDepthMm">
+            <summary>
+            球门短边（正置沿X方向）的实际长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ForbiddenZoneLengthZMm">
+            <summary>
+            禁区Z方向的实际长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ForbiddenZoneLengthXMm">
+            <summary>
+            禁区X方向的实际长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.CenterCircleRadiusMm">
+            <summary>
+            中心圆的实际半径（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.OffsetHeightMm">
+            <summary>
+            偏移量高度，单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.OffsetWidthMm">
+            <summary>
+            偏移量宽度，单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.MovingCircleRadiusMm">
+            <summary>
+            搬运用圆的实际半径（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.ObstacleCircleRadiusMm">
+            <summary>
+            障碍越野用圆的实际半径（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.LeftMm">
+            <summary>
+            矩形场地中心为原点，右为正X，下为正Z的坐标系中场地左边界X坐标值，单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.TopMm">
+            <summary>
+            矩形场地中心为原点，右为正X，下为正Z的坐标系中场地上边界Y坐标值，单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.RightMm">
+            <summary>
+            矩形场地中心为原点，右为正X，下为正Z的坐标系中场地右边界X坐标值，单位毫米
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.Field.BottomMm">
+            <summary>
+            矩形场地中心为原点，右为正X，下为正Z的坐标系中场地下边界Y坐标值，单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.BorderLeftTopVertices">
+            <summary>
+            边界左上角球门块的碰撞检测多边形顶点列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.BorderLeftBottomVertices">
+            <summary>
+            边界左下角球门块的碰撞检测多边形顶点列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.BorderRightTopVertices">
+            <summary>
+            边界右上角球门块的碰撞检测多边形顶点列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.BorderRightBottomVertices">
+            <summary>
+            边界右下角球门块的碰撞检测多边形顶点列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.IsGoalBlockRegular">
+            <summary>
+            球门块是否规则地摆放在仿真场地四个角上
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.SetField">
+            <summary>
+            从配置文件中读取可配置参数并计算出需要计算的参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.FindWindow(System.String,System.String)">
+            <summary>
+            API: Retrieves a handle to the top-level window whose class name and window name 
+            match the specified strings
+            </summary>
+            <param name="lpClassName">The class name or a class atom</param>
+            <param name="lpWindowName">The window name (the window's title)</param>
+            <returns>A handle to the window that has the specified class name and window name or NULL</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.FieldCalculation">
+            <summary>
+            根据设定的部分场地参数计算需要计算的部分场地参数
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.Field.GoalBlockType">
+            <summary>
+            球门块方向类型，TYPE11/TYPE12分别表示直角弯钩里侧沿逆时针/顺时针方向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.GoalBlockType.TYPE11">
+            <summary>
+            球门块直角弯钩里侧沿逆时针方向
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Field.GoalBlockType.TYPE12">
+            <summary>
+            球门块直角弯钩里侧沿顺时针方向
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.Draw(System.Drawing.Bitmap,System.Boolean,System.Int32)">
+            <summary>
+            将仿真比赛场地绘制到Bitmap对象上并返回该对象
+            </summary>
+            <param name="bmp"></param>
+             <param name="IsGoalBlockNeeded"></param>
+             <param name="IsFieldInnerLinesNeeded"></param>
+            <returns>绘制好比赛场地的Bitmap对象的引用</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.DrawGoal(System.Drawing.Graphics,System.Drawing.Point,URWPGSim2D.Common.Field.GoalBlockType,System.Int32)">
+            <summary>
+            绘制球门块  weiqingdan 20101116
+            </summary>
+            <param name="myGraphic">GDI+绘图对象</param>
+            <param name="point">球门块长边的起始点</param>
+            <param name="goalBlockType">球门块的方向，用枚举类型表示</param>
+            <param name="iThetaAngle">球门块长边的倾斜角度</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPixX(System.Int32)">
+            <summary>
+            将X方向毫米数转换成绘图容器PictureBox中像素数
+            </summary>
+            <param name="mm">X方向毫米数</param>
+            <returns>X方向在绘图容器PictureBox中像素数</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPixZ(System.Int32)">
+            <summary>
+            将Z方向毫米数转换成绘图容器PictureBox中像素数
+            </summary>
+            <param name="mm">Z方向毫米数</param>
+            <returns>Z方向在绘图容器PictureBox中像素数</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPix(System.Drawing.Point)">
+            <summary>
+            将以毫米为单位的二维点转换成绘图容器PictureBox中以像素为单位的二维点
+            </summary>
+            <param name="pointMm">以毫米为单位的二维点</param>
+            <returns>绘图容器PictureBox中以像素为单位的二维点</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPix(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            将以毫米为单位的三维矢量转换成绘图容器PictureBox中以像素为单位的三维矢量，Y值置为0
+            </summary>
+            <param name="vector3">以毫米为单位的三维矢量</param>
+            <returns>绘图容器PictureBox中以像素为单位的三维矢量</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPix(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            使用以毫米为单位的左上角坐标和宽度高度值生成绘图容器PictureBox中以像素为单位的矩形对象
+            </summary>
+            <param name="xMm">矩形左上角X坐标以毫米为单位的值</param>
+            <param name="zMm">矩形左上角Z坐标以毫米为单位的值</param>
+            <param name="widthMm">矩形宽度以毫米为单位的值</param>
+            <param name="heightMm">矩形高度以毫米为单位的值</param>
+            <returns>绘图容器PictureBox中以像素为单位的矩形对象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.MmToPix(System.Drawing.Rectangle)">
+            <summary>
+            将以毫米为坐标单位的矩形对象转换成绘图容器PictureBox中以像素为坐标单位的矩形对象
+            </summary>
+            <param name="rectMm">以毫米为坐标单位的矩形对象</param>
+            <returns>绘图容器PictureBox中以像素为坐标单位的矩形对象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.PixToMm(System.Drawing.Point)">
+            <summary>
+            点在场地绘图对象PictureBox坐标系中以像素为单位的坐标转换成实际场地坐标系中以毫米为单位的坐标
+            </summary>
+            <param name="pointPix">点在场地绘图对象PictureBox坐标系中以像素为单位的坐标值</param>
+            <returns>点在实际场地坐标系中以毫米为单位的坐标值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.PixToMm(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            点在场地绘图对象PictureBox坐标系中以像素为单位的坐标转换成实际场地坐标系中以毫米为单位的坐标
+            </summary>
+            <param name="vector3Pix">点在场地绘图对象PictureBox坐标系中以像素为单位的三维坐标值</param>
+            <returns>点在实际场地坐标系中以毫米为单位的三维坐标值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Field.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.DrawHelper">
+            <summary>
+            仿真场地中圆形和方形对象绘制静态类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.DrawHelper.DrawEllipse(System.Drawing.Graphics@,Microsoft.Xna.Framework.Vector3,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            绘制仿真场地中圆形对象到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+            <param name="positionMm">待绘制对象中心点在场地坐标系中的坐标，各维单位毫米</param>
+            <param name="radiusMm">待绘制对象半径，单位毫米</param>
+            <param name="borderWithPix">待绘制对象边框宽度，单位像素</param>
+            <param name="colorBorder">待绘制对象边框颜色</param>
+            <param name="colorFilled">待绘制对象填充颜色</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.DrawHelper.DrawRectangle(System.Drawing.Graphics@,Microsoft.Xna.Framework.Vector3,System.Single,System.Int32,System.Int32,System.Int32,System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            绘制仿真场地中方形对象到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+            <param name="positionMm">待绘制对象中心点在场地坐标系中的坐标，各维单位毫米</param>
+            <param name="directionRad">待绘制对象长度方向，单位弧度</param>
+            <param name="lengthMm">待绘制对象长度，单位毫米</param>
+            <param name="widthMm">待绘制对象宽度，单位毫米</param>
+            <param name="borderWithPix">待绘制对象边框宽度，单位像素</param>
+            <param name="colorBorder">待绘制对象边框颜色</param>
+            <param name="colorFilled">待绘制对象填充颜色</param>
+        </member>
+        <member name="T:URWPGSim2D.Common.RoundedDynamic">
+            <summary>
+            仿真场地中圆形动态对象基类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.RadiusMm">
+            <summary>
+            半径（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.ColorFilled">
+            <summary>
+            填充颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.ColorBorder">
+            <summary>
+            边框颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.BorderWidthPix">
+            <summary>
+            边框宽度，单位像素
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PositionMm">
+            <summary>
+            当前中心点坐标，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PrePositionMm">
+            <summary>
+            当前中心点坐标备份，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.VelocityMmPs">
+            <summary>
+            当前速度值，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PreVelocityMmPs">
+            <summary>
+            当前速度值备份，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.VelocityDirectionRad">
+            <summary>
+            当前速度方向，单位弧度rad，值域[-PI, PI)
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PreVelocityDirectionRad">
+            <summary>
+            当前速度方向备份，单位弧度rad，值域[-PI, PI)
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.AngularVelocityRadPs">
+            <summary>
+            当前角速度值，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PreAngularVelocityRadPs">
+            <summary>
+            当前角速度值备份，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.Collision">
+            <summary>
+            当前碰撞状态
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedDynamic.PreCollision">
+            <summary>
+            当前碰撞状态备份
+            </summary>        
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.SetRoundedDynamic">
+            <summary>
+            设置默认参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.ResetSomeLocomotionPara">
+            <summary>
+            重置仿真水球的部分运动学参数，用于重新初始化使命清除上一次运行结束时保存的值
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.Draw(System.Drawing.Graphics@)">
+            <summary>
+            将当前对象绘制到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedDynamic.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.RoundedStatic">
+            <summary>
+            仿真场地中圆形静态对象基类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedStatic.RadiusMm">
+            <summary>
+            半径（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedStatic.ColorFilled">
+            <summary>
+            填充颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedStatic.ColorBorder">
+            <summary>
+            边框颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedStatic.BorderWidthPix">
+            <summary>
+            边框宽度，单位像素
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedStatic.PositionMm">
+            <summary>
+            中心点坐标，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.SetRoundedStatic">
+            <summary>
+            设置默认参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.Draw(System.Drawing.Graphics@)">
+            <summary>
+            将当前对象绘制到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedStatic.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.RectangularDynamic">
+            <summary>
+            仿真场地中方形动态对象基类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.IsDeletionAllowed">
+            <summary>
+            对象是否允许删除的标识量
+            仿真使命初始化时添加的对象不允许删除该值为false
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Int32,System.Single,System.Single,System.Single,System.Single,System.Int32)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真方形障碍物名称</param>
+            <param name="positionMm">仿真方形障碍物位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真方形障碍物轮廓颜色</param>
+            <param name="colorFilled">仿真方形障碍物填充颜色</param>
+            <param name="borderWithPix">仿真方形障碍物轮廓像素宽度</param>
+            <param name="lengthMm">仿真方形障碍物长度（以毫米为单位）</param>
+            <param name="widthMm">仿真方形障碍物宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真方形障碍物方向（在场地坐标系中，以弧度为单位）</param>
+            <param name="velocityMmPs">当前速度值，单位毫米每秒mm/s</param>
+            <param name="velocityDirectionRad">当前速度方向备份，单位弧度rad，值域[-PI, PI)</param>
+            <param name="angularVelocityRadPs">当前角速度值，单位弧度每秒rad/s</param>
+            <param name="circleTimes">一个循环的周期数</param>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.LengthMm">
+            <summary>
+            长度（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.WidthMm">
+            <summary>
+            宽度（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.DirectionRad">
+            <summary>
+            方向（**设置**），单位弧度
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.ColorFilled">
+            <summary>
+            填充颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.ColorBorder">
+            <summary>
+            边框颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.BorderWidthPix">
+            <summary>
+            边框宽度，单位像素
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PositionMm">
+            <summary>
+            当前中心点坐标，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PrePositionMm">
+            <summary>
+            当前中心点坐标备份，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.LengthDirectionRad">
+            <summary>
+            当前长度（Length）方向，单位弧度rad
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PreLengthDirectionRad">
+            <summary>
+            当前长度（Length）方向备份，单位弧度rad
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.VelocityMmPs">
+            <summary>
+            当前速度值，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PreVelocityMmPs">
+            <summary>
+            当前速度值备份，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.VelocityDirectionRad">
+            <summary>
+            当前速度方向，单位弧度rad，值域[-PI, PI)
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PreVelocityDirectionRad">
+            <summary>
+            当前速度方向备份，单位弧度rad，值域[-PI, PI)
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.AngularVelocityRadPs">
+            <summary>
+            当前角速度值，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PreAngularVelocityRadPs">
+            <summary>
+            当前角速度值备份，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.CircleTimes">
+            <summary>
+            一个循环包含的周期数
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.TimesCouter">
+            <summary>
+            周期的计数器
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.Collision">
+            <summary>
+            当前碰撞状态
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PreCollision">
+            <summary>
+            当前碰撞状态备份
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.CircumcircleRadiusMm">
+            <summary>
+            外接圆半径（**根据长度宽度计算**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularDynamic.PolygonVertices">
+            <summary>
+            矩形4个顶点列表，4个元素依次为左上/右上/右下/左下，各顶点各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.SetRectangularDynamic">
+            <summary>
+            设置默认参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.CalculateCollisionDetectionParas">
+            <summary>
+            计算碰撞检测参数，由各继承类构造函数调用
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.Draw(System.Drawing.Graphics@)">
+            <summary>
+            将当前对象绘制到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.UpdateRectangularDynamicLocomotionPara(System.Int32)">
+            <summary>
+            根据仿真周期毫秒数更新动态障碍物运动学参数包括中心点位置坐标/速度值/速度方向/角速度值
+            </summary>
+            <param name="timeIntervalMs">仿真周期毫秒数</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularDynamic.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.RectangularStatic">
+            <summary>
+            仿真场地中方形静态对象基类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.LengthMm">
+            <summary>
+            长度（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.WidthMm">
+            <summary>
+            宽度（**设置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.DirectionRad">
+            <summary>
+            方向（**设置**），单位弧度
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.ColorFilled">
+            <summary>
+            填充颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.ColorBorder">
+            <summary>
+            边框颜色
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.BorderWidthPix">
+            <summary>
+            边框宽度，单位像素
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.PositionMm">
+            <summary>
+            当前中心点坐标，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.LengthDirectionRad">
+            <summary>
+            当前长度（Length）方向，单位弧度rad
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.CircumcircleRadiusMm">
+            <summary>
+            外接圆半径（**根据长度宽度计算**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularStatic.PolygonVertices">
+            <summary>
+            矩形4个顶点列表，4个元素依次为左上/右上/右下/左下，各顶点各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.SetRectangularStatic">
+            <summary>
+            设置默认参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.CalculateCollisionDetectionParas">
+            <summary>
+            计算碰撞检测参数，由各继承类构造函数调用
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.Draw(System.Drawing.Graphics@)">
+            <summary>
+            将当前对象绘制到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularStatic.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.Ball">
+            <summary>
+            仿真水球类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Ball.TrajectoryPoints">
+            <summary>
+             仿真机器鱼绘制轨迹用的点列表
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.#ctor(System.Int32)">
+            <summary>
+            构造函数2
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.#ctor(System.Int32,System.Drawing.Color)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="radiusMm">仿真水球半径</param>
+            <param name="color">仿真水球颜色</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.SetBall">
+            <summary>
+            从配置文件中读取可配置参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.UpdateBallLocomotionPara(System.Int32)">
+            <summary>
+            根据仿真周期毫秒数更新仿真水球运动学参数包括中心点位置坐标/速度值/速度方向/角速度值
+            </summary>
+            <param name="timeIntervalMs">仿真周期毫秒数</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Ball.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.RoundedObstacle">
+            <summary>
+            仿真圆形静态障碍物类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedObstacle.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoundedObstacle.IsDeletionAllowed">
+            <summary>
+            对象是否允许删除的标识量
+            仿真使命初始化时添加的对象不允许删除该值为false
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Int32)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真圆形障碍物名称</param>
+            <param name="positionMm">仿真圆形障碍物位置（在世界坐标系中，以毫米为单位）</param>
+            <param name="color">仿真圆形障碍物颜色</param>
+            <param name="radiusMm">仿真圆形障碍物半径（以毫米为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真圆形障碍物名称</param>
+            <param name="positionMm">仿真圆形障碍物位置（在世界坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真圆形障碍物轮廓颜色</param>
+            <param name="colorFilled">仿真圆形障碍物填充颜色</param>
+            <param name="radiusMm">仿真圆形障碍物半径（以毫米为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真圆形障碍物名称</param>
+            <param name="positionMm">仿真圆形障碍物位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真圆形障碍物轮廓颜色</param>
+            <param name="colorFilled">仿真圆形障碍物填充颜色</param>
+            <param name="borderWithPix">仿真圆形障碍物轮廓像素宽度</param>
+            <param name="radiusMm">仿真圆形障碍物半径（以毫米为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoundedObstacle.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.RectangularObstacle">
+            <summary>
+            仿真方形静态障碍物类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularObstacle.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RectangularObstacle.IsDeletionAllowed">
+            <summary>
+            对象是否允许删除的标识量
+            仿真使命初始化时添加的对象不允许删除该值为false
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真方形障碍物名称</param>
+            <param name="positionMm">仿真方形障碍物位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="color">仿真方形障碍物颜色</param>
+            <param name="lengthMm">仿真方形障碍物长度（以毫米为单位）</param>
+            <param name="widthMm">仿真方形障碍物宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真方形障碍物方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真方形障碍物名称</param>
+            <param name="positionMm">仿真方形障碍物位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真方形障碍物轮廓颜色</param>
+            <param name="colorFilled">仿真方形障碍物填充颜色</param>
+            <param name="lengthMm">仿真方形障碍物长度（以毫米为单位）</param>
+            <param name="widthMm">仿真方形障碍物宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真方形障碍物方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真方形障碍物名称</param>
+            <param name="positionMm">仿真方形障碍物位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真方形障碍物轮廓颜色</param>
+            <param name="colorFilled">仿真方形障碍物填充颜色</param>
+            <param name="borderWithPix">仿真方形障碍物轮廓像素宽度</param>
+            <param name="lengthMm">仿真方形障碍物长度（以毫米为单位）</param>
+            <param name="widthMm">仿真方形障碍物宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真方形障碍物方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RectangularObstacle.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.Channel">
+            <summary>
+            仿真通道类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Channel.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真通道名称</param>
+            <param name="positionMm">仿真通道中心点位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="color">仿真通道颜色</param>
+            <param name="lengthMm">仿真通道长度（以毫米为单位）</param>
+            <param name="widthMm">仿真通道宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真通道方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真通道名称</param>
+            <param name="positionMm">仿真通道中心点位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真通道轮廓颜色</param>
+            <param name="colorFilled">仿真通道填充颜色</param>
+            <param name="lengthMm">仿真通道长度（以毫米为单位）</param>
+            <param name="widthMm">仿真通道宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真通道方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.#ctor(System.String,Microsoft.Xna.Framework.Vector3,System.Drawing.Color,System.Drawing.Color,System.Int32,System.Int32,System.Int32,System.Single)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="strName">仿真通道名称</param>
+            <param name="positionMm">仿真通道中心点位置（在场地坐标系中，以毫米为单位）</param>
+            <param name="colorBorder">仿真通道轮廓颜色</param>
+            <param name="colorFilled">仿真通道填充颜色</param>
+            <param name="borderWithPix">仿真通道轮廓像素宽度</param>
+            <param name="lengthMm">仿真通道长度（以毫米为单位）</param>
+            <param name="widthMm">仿真通道宽度（以毫米为单位）</param>
+            <param name="directionDeg">仿真通道方向（在场地坐标系中，以弧度为单位）</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Channel.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.ISimEnvironment">
+            <summary>
+            仿真环境接口，仿真环境基类实现此接口
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.IMission">
+            <summary>
+            仿真使命（比赛或实验项目）接口，仿真使命基类实现此接口
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.GetTeams">
+            <summary>
+            获取当前使命参与队伍列表及每支队伍的通用仿真机器鱼对象，在使命基类中实现
+            每支队伍的公共参数为新建的副本，不是原始队伍列表中相应对象的引用
+            </summary>
+            <returns>仿真使命参与队伍列表，每支队伍里有相应的通用仿真机器鱼对象引用</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.GetEnvironment">
+            <summary>
+            获取当前使命的公共仿真环境，在使命基类中实现
+            </summary>
+            <returns>仿真环境基类对象引用</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.GetDecision">
+            <summary>
+            获取当前使命的决策数组，在仿真基类中实现
+            </summary>
+            <returns>当前使命各支队伍各个队员的决策数组，d[i, j]为第i队第j条仿真机器鱼的决策数据</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.GetMissionCommonPara">
+            <summary>
+            获取当前使命的公共参数，在使命基类中实现
+            </summary>
+            <returns>当前使命的公共参数值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.SetMissionCommonPara(URWPGSim2D.Common.MissionCommonPara)">
+            <summary>
+            设置当前使命的公共参数，在使命基类中实现
+            </summary>
+            <param name="para">当前使命的公共参数值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.SetMission">
+            <summary>
+            设置当前使命各相关对象的初始值，在每个具体使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.SetDecisionsToFishes">
+            <summary>
+            根据当前决策数组更新全部仿真机器鱼的决策数据，在使命基类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ProcessFishLocomotion">
+            <summary>
+            更新当前使命全部仿真机器鱼的运动学参数，在使命基类中实现
+            注意左右半场的处理策略：若仿真机器鱼所在队伍位于右半场，
+            更新质心坐标值、鱼体方向值、速度方向值、角速度值时，增量值均按正常值取反，
+            如此便可实现运动行为反向的效果
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ProcessBallLocomotion">
+            <summary>
+            更新当前使命全部仿真水球的运动学参数，在使命基类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ProcessDynamicObstacleLocomotion">
+            <summary>
+            更新当前使命全部动态障碍物的运动学参数，在使命基类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ProcessCollision">
+            <summary>
+            处理当前周期仿真环境中各种对象间的碰撞，包括检测和响应碰撞，在使命基类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ProcessControlRules">
+            <summary>
+            处理当前仿真使命的控制规则，在具体使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.Draw">
+            <summary>
+            绘制当前使命各相关动态图形对象，在使命基类中实现
+            </summary>
+            <returns>绘制好各动态图形对象的Bitmap对象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetTeamsAndFishes">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetGoalHandler">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetShootout">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetBalls">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命涉及的全部仿真水球恢复默认位置，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetObstacles">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命涉及的全部仿真障碍物恢复默认位置，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetColorFishAndId">
+            <summary>
+            设置仿真机器鱼鱼体和编号默认颜色，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetColorBall">
+            <summary>
+            设置仿真水球填充和边框默认颜色，在仿真使命基类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetField">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命使用的仿真场地尺寸恢复默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.IMission.ResetEnvironment">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命相应的仿真环境各参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.IRoboFish">
+            <summary>
+            仿真机器鱼行为接口，仿真机器鱼基类实现此接口
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.Mission">
+            <summary>
+            仿真使命（比赛或实验项目）基类，所有具体使命（比赛或实验项目）使用的使命类必须继承该类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Mission.CommonPara">
+            <summary>
+            仿真使命（比赛或实验项目）公共参数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Mission.TeamsRef">
+            <summary>
+            仿真使命（比赛或实验项目）通用参与队伍列表及其通用仿真机器鱼
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Mission.EnvRef">
+            <summary>
+            仿真使命（比赛或实验项目）所使用的通用仿真环境
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Mission.DecisionRef">
+            <summary>
+            仿真使命（比赛或实验项目）各支队伍各条仿真机器鱼的决策数组 
+            DecisionRef[i, j]为第i队第j条鱼的决策数据
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Mission.HtMissionVariables">
+            <summary>
+            具体仿真使命（比赛或实验项目）类即<see cref="T:URWPGSim2D.Common.Mission">Mission</see>类的子类需要给策略传递的变量名和值对
+            使用哈希表<see cref="T:System.Collections.Hashtable">Hashtable</see>存储需要传递的键值对
+            键（变量名）和值（变量值）均用string类型表示
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetDefaultMissionCommonPara">
+            <summary>
+            设置默认使命参数，置为1V1比赛所需值
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.InitDecision">
+            <summary>
+            初始化决策数组空间，由各具体使命类构造函数调用
+            该方法要在调用SetMissionCommonPara设置好比赛类型公共参数（如每队队员数量）之后调用
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetDecision">
+            <summary>
+            将决策数组各元素重置为默认值，由各具体使命类的SetMission方法调用
+            供使命类型改变时重新初始化当前选中的使命用
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ReversePose">
+            <summary>
+            对调所处半场，即将位置坐标和鱼体方向取反
+            用于仿真机器鱼所属队伍位于右半场时绘制/碰撞检测/向客户端或策略传递参数前的处理
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.RecoveryPose">
+            <summary>
+            恢复所处半场
+            用于仿真机器鱼所属队伍位于右半场时绘制/碰撞检测/向客户端或策略传递参数后的处理
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetSomeLocomotionPara">
+            <summary>
+            重启或改变仿真使命类型时重置当前选中使命的动态对象（仿真机器鱼和仿真水球）的部分运动学参数
+            主要是将速度值/速度方向值/角速度值/直游档位值/转弯档位值等重置为默认值
+            该方法由各具体使命类的SetMission接口实现方法调用
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.GetMissionCommonPara">
+            <summary>
+            实现IMission中的接口用于 获取当前使命的公共参数
+            </summary>
+            <returns>当前使命类型的公共参数值</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetMissionCommonPara(URWPGSim2D.Common.MissionCommonPara)">
+            <summary>
+            实现IMission中的接口用于 设置当前使命的公共参数
+            </summary>
+            <param name="para">当前使命类型的公共参数值</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetMission">
+            <summary>
+            设置当前使命各相关对象的初始值，在每个具体使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.GetTeams">
+            <summary>
+            实现IMission中的接口用于 获取当前使命参与队伍列表及每支队伍的通用仿真机器鱼对象
+            每支队伍的公共参数为新建的副本，不是原始队伍列表中相应对象的引用
+            </summary>
+            <returns>仿真使命参与队伍列表，每支队伍里有相应的通用仿真机器鱼对象引用</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.GetEnvironment">
+            <summary>
+            实现IMission中的接口用于 获取当前使命的公共仿真环境
+            </summary>
+            <returns>仿真环境基类对象引用</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.GetDecision">
+            <summary>
+            实现IMission中的接口用于 获取当前使命类型的决策数组
+            </summary>
+            <returns>当前使命类型各支队伍各个队员的决策数组，d[i, j]为第i队第j条仿真机器鱼的决策数据</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetDecisionsToFishes">
+            <summary>
+            实现IMission中的接口用于 根据当前决策数组更新全部仿真机器鱼的决策数据
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ProcessFishLocomotion">
+            <summary>
+            实现IMission中的接口用于 更新当前使命中全部仿真机器鱼的运动学参数
+            注意左右半场的处理方法：若仿真机器鱼所在队伍位于右半场，
+            更新质心坐标值、鱼体方向值、速度方向值、角速度值时，增量值均按正常值取反，
+            如此便可实现运动行为反向的效果
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ProcessBallLocomotion">
+            <summary>
+            实现IMission中的接口用于 更新当前使命全部仿真水球的运动学参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ProcessDynamicObstacleLocomotion">
+            <summary>
+            实现IMission中的接口用于 更新当前使命全部动态障碍物的运动学参数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ProcessCollision">
+            <summary>
+            实现IMission中的接口用于 处理当前周期仿真环境中各种对象间的碰撞，包括检测和响应碰撞
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ProcessControlRules">
+            <summary>
+            处理当前仿真使命的控制规则，在具体使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.Draw">
+            <summary>
+            实现IMission中的接口用于 绘制当前使命中的动态图形对象
+            </summary>
+            <returns>绘制好各动态图形对象的Bitmap对象</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetTeamsAndFishes">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetGoalHandler">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetShootout">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命参与队伍及其仿真机器鱼的各项参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetBalls">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命涉及的全部仿真水球恢复默认位置，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetObstacles">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命涉及的全部仿真障碍物恢复默认位置，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetDynamicObstacles">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命涉及的全部动态仿真障碍物恢复默认位置，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetColorFishAndId">
+            <summary>
+            设置仿真机器鱼鱼体和编号默认颜色，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetColorBall">
+            <summary>
+            实现IMission中的接口用于 设置仿真水球填充和边框默认颜色，仿真使命基类中提供标准实现，可在具体仿真使命类中重载
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetField">
+            <summary>
+            重启或改变仿真使命类型和界面请求恢复默认时将当前仿真使命使用的仿真场地尺寸恢复默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.ResetEnvironment">
+            <summary>
+            重启或改变仿真使命类型时将该仿真使命相应的仿真环境各参数设置为默认值，在具体仿真使命类中实现
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetColorFish(System.Int32,System.Int32,System.Drawing.Color)">
+            <summary>
+            设置仿真机器鱼的颜色
+            </summary>
+            <param name="teamId">待设置颜色的仿真机器鱼所在队伍编号（从0开始）</param>
+            <param name="fishId">待设置颜色的仿真机器鱼在其队伍中的编号（从0开始）</param>
+            <param name="ColorFish">仿真机器鱼鱼体颜色 modified by chenwei 20110603</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.SetFishPose(System.Int32,System.Int32,Microsoft.Xna.Framework.Vector3,System.Single)">
+            <summary>
+            设置仿真机器鱼位姿
+            </summary>
+            <param name="teamId">待设置颜色的仿真机器鱼所在队伍编号（从0开始）</param>
+            <param name="fishId">待设置颜色的仿真机器鱼在其队伍中的编号（从0开始）</param>
+            <param name="position">仿真机器鱼位置</param>
+            <param name="direction">仿真机器鱼方向</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.Mission.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.MissionCommonPara">
+            <summary>
+             仿真使命（比赛或实验项目）公共参数类型结构体
+            </summary>    
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.#ctor">
+            <summary>
+            默认构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Boolean)">
+            <summary>
+            带参数构造函数，默认构造出1V1比赛类型的使命公共参数结构体变量
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.#ctor(System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean,System.Int32)">
+            <summary>
+            带参数构造函数，默认构造出搬运比赛类型的使命公共参数结构体变量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.Name">
+            <summary>
+             仿真使命（比赛或实验项目）名称字符串
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.TeamCount">
+            <summary>
+             仿真使命（比赛或实验项目）参与队伍数量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.FishCntPerTeam">
+            <summary>
+             仿真使命（比赛或实验项目）参与队伍每队仿真机器鱼数量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.TotalSeconds">
+            <summary>
+             仿真使命（比赛或实验项目）完成所需时间总秒数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.MsPerCycle">
+            <summary>
+             仿真使命（比赛或实验项目）的仿真周期毫秒数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.RemainingCycles">
+            <summary>
+             仿真使命（比赛或实验项目）过程当前所剩仿真周期数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsRunning">
+            <summary>
+             仿真使命（比赛或实验项目）是否正在运行，用于实现界面状态约束
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsPaused">
+            <summary>
+             仿真使命（比赛或实验项目）是否正在运行，且处于暂停状态
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsShowDlgNeeded">
+            <summary>
+            仿真使命（比赛或实验项目）运行过程中，当前周期是否需要弹出提示对话框
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.Message">
+            <summary>
+            仿真使命（比赛或实验项目）运行过程中，需要使用弹出对话框显示的消息字符串
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.DisplayingCycles">
+            <summary>
+            动态对象（仿真机器鱼和仿真水球）参数集中显示窗口DlgFishInfo打开后经过的周期数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsPauseNeeded">
+            <summary>
+            仿真使命（比赛或实验项目）运行过程中，需要模拟点击界面“暂停”按钮，true需要，false不需要
+            用于对抗性比赛进球或交换半场后，在ProcessControlRules方法中设置以通知Sim2DSvr使用代码模拟按下“暂停”按钮
+            </summary>
+            <remarks>added by LiYoubing 20110309</remarks>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsExchangedHalfCourt">
+            <summary>
+            仿真使命运行过程中交换了半场，true为已经交换，false为没有交换
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsGoalBlockNeeded">
+            <summary>
+            是否需要绘制球门块
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MissionCommonPara.IsFieldInnerLinesNeeded">
+            <summary>
+            是否需要绘制禁区线、中圈线
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.MissionCommonPara.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.MyMission">
+            <summary>
+            与使命相关各对象的引用
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.MyMission.Instance">
+            <summary>
+            创建或获取该类的唯一实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.MissionRef">
+            <summary>
+            通用使命对象引用变量，指向当前选中的具体使命类型对象
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.IMissionRef">
+            <summary>
+            使命接口引用变量，用于调用各具体比赛类型的使命类实例中的方法
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.ParasRef">
+            <summary>
+            仿真使命公共参数引用变量
+            其值通过使命接口引用变量IMissionRef调用GetMissionCommonPara()方法获得
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.TeamsRef">
+            <summary>
+            仿真使命参与队伍列表引用变量，其中的RoboFish成员指向具体的仿真机器鱼对象
+            其值通过使命接口引用变量IMissionRef调用GetTeams()方法获得
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.EnvRef">
+            <summary>
+            仿真环境引用变量，其值通过使命接口引用变量IMissionRef调用GetEnvironment()方法获得
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.DecisionRef">
+            <summary>
+            当前仿真周期决策结果数组，_decisions[i, j]表示第i支队伍第j条仿真机器鱼的决策结果
+            其值通过使命接口引用变量IMissionRef调用GetDecision()方法获得
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.MyMission.IsRomteMode">
+            <summary>
+            指示服务端运行模式，true表示运行于Remote模式，false表示运行于Local模式
+            该值为true时
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.RoboFish">
+            <summary>
+            仿真机器鱼基类，所有具体使命（比赛或实验项目）使用的仿真机器鱼类必须继承该类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.SetFish">
+            <summary>
+            从配置文件中读取可配置参数并计算出需要计算的参数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.HtFishVariables">
+            <summary>
+            具体仿真机器鱼类即<see cref="T:URWPGSim2D.Common.RoboFish">RoboFish</see>类的子类需要给策略传递的变量名和值对
+            使用哈希表<see cref="T:System.Collections.Hashtable">Hashtable</see>存储需要传递的键值对
+            键（变量名）和值（变量值）均用string类型表示
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.HeadLength">
+            <summary>
+            鱼头长度（**配置**），单位毫米，added by chenxiao
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.BodyLength">
+            <summary>
+            鱼体前端刚体长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.BodyWidth">
+            <summary>
+            鱼体前端刚体宽度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailJointLength1">
+            <summary>
+            尾部第一个关节长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailJointLength2">
+            <summary>
+            尾部第二个关节长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailJointLength3">
+            <summary>
+            尾部第三个关节长度（**配置**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailToBodyAngle1">
+            <summary>
+            尾部第一个关节相对鱼体的角度（**实时计算**），单位弧度
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailToBodyAngle2">
+            <summary>
+            尾部第二个关节相对鱼体的角度（**实时计算**），单位弧度
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TailToBodyAngle3">
+            <summary>
+            尾部第三个关节相对鱼体的角度（**实时计算**），单位弧度
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.InitPhase">
+            <summary>
+            尾部三个关节正弦摆动公式的初始调节相位值
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PositionMm">
+            <summary>
+            当前绘图中心（鱼头刚体部分矩形中心）坐标，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PrePositionMm">
+            <summary>
+            当前绘图中心（鱼头刚体部分矩形中心）坐标备份，各维坐标单位毫米mm，2D版本中Y坐标固定为0
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.BodyDirectionRad">
+            <summary>
+            当前鱼体方向，单位弧度rad，值域[-PI, PI)
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PreBodyDirectionRad">
+            <summary>
+            当前鱼体方向备份，单位弧度rad，值域[-PI, PI)
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.VelocityMmPs">
+            <summary>
+            当前速度值，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PreVelocityMmPs">
+            <summary>
+            当前速度值备份，单位毫米每秒mm/s
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.VelocityDirectionRad">
+            <summary>
+            当前速度方向，单位弧度rad，值域(-PI, PI]
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PreVelocityDirectionRad">
+            <summary>
+            当前速度方向备份，单位弧度rad，值域(-PI, PI]
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.AngularVelocityRadPs">
+            <summary>
+            当前角速度值，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PreAngularVelocityRadPs">
+            <summary>
+            当前角速度值备份，单位弧度每秒rad/s
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.Tactic">
+            <summary>
+            当前决策数据值，每周期运动学计算完毕后根据条件决定是否更新
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PreTactic">
+            <summary>
+            当前决策数据值备份，每周期运动学计算完毕后使用目标决策数据值更新
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TargetTactic">
+            <summary>
+            目标决策数据值，由高层策略计算后给出
+            </summary>        
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelCenterPositionMm">
+            <summary>
+            鱼体碰撞检测BV树根结点，鱼圆形模型的圆心，各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelRadiusMm">
+            <summary>
+            鱼体碰撞检测BV树根结点，鱼圆形模型半径（**待求**），单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PolygonVertices">
+            <summary>
+            鱼体碰撞检测边界值点列表，主要用于判断鱼体最大值点和最小值点，7个元素依次为头部/左边头部点/左胸鳍/鱼尾第三关节左下点/鱼尾第三关节右下点/右胸鳍顶点/右边头部点，各顶点各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelBodyCenterPositionMm">
+            <summary>
+            鱼体碰撞检测BV树第二层子结点，鱼刚体部分圆形模型的圆心，各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelBodyRadiusMm">
+            <summary>
+            鱼体碰撞检测BV树第二层子结点，鱼刚体部分圆形模型的半径，单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelTailCenterPositionMm">
+            <summary>
+            鱼体碰撞检测BV树第二层子结点，鱼尾部圆形模型的圆心，各维坐标单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CollisionModelTailRadiusMm">
+            <summary>
+            鱼体碰撞检测BV树第二层子结点，鱼尾部圆形模型半径，单位毫米
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.LeftPectoralPolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，左胸鳍四边形顶点列表，四个顶点顺序分别为胸鳍最左边点，下边点，上边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.RightPectoralPolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，右胸鳍四边形顶点列表，四个顶点顺序分别为胸鳍最右边点，下边点，上边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.BodyPolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，鱼体躯干部分五边形顶点列表，五个顶点顺序分别为头部左边点、头部顶点、头部右边点、右下边点、左下边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.Tail1PolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，第一关节四边形顶点列表，四个顶点顺序分别为左上边点、右上边点、右下边点、左下边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.Tail2PolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，第二关节四边形顶点列表，四个顶点顺序分别为左上边点、右上边点、右下边点、左下边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.Tail3PolygonVertices">
+            <summary>
+            鱼体碰撞检测BV树叶结点，第三关节四边形顶点列表，四个顶点顺序分别为左上边点、右上边点、右下边点、左下边点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.LeftCaudalFinVertices">
+            <summary>
+            鱼体碰撞检测BV树叶节点，尾鳍左半部分三角形顶点列表，三个顶点分别为最左点、尾部凹形顶点、与尾部第三关节连接点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.RightCaudalFinVertices">
+            <summary>
+            鱼体碰撞检测BV树叶节点，尾鳍右半部分三角形顶点列表，三个顶点分别为最右点、尾部凹形顶点、与尾部第三关节连接点
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TransactionVectorThreshold">
+            <summary>
+            鱼和其他对象碰撞时碰撞相交向量模长的阈值，依次为鱼和障碍物的阈值、鱼和鱼的阈值、鱼和球的阈值、鱼和边界的阈值
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.PrePolygonVertices">
+            <summary>
+            机器鱼前一周期的碰撞模型，是由七点组成的外围模型
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.Collision">
+            <summary>
+            碰撞状态列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.ColorFish">
+            <summary>
+            前方色标（队伍标识）颜色->仿真机器鱼鱼体颜色
+            考虑实体机器鱼已经去掉色标，仿真机器鱼需要把鱼体绘制成统一颜色
+            新的着色方案不再使用仿真机器鱼鱼体前端矩形来绘制色标
+            仿真机器鱼通体使用统一颜色即此处的ColorFish
+            每支队伍的全部仿真机器鱼设置成统一颜色即所有仿真机器鱼的ColorFish相同
+            不同队伍的仿真机器鱼ColorFish应设置成不同值以区别不同队伍
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.ColorId">
+            <summary>
+            后方色标（队员标识）颜色->仿真机器鱼编号颜色
+            场上所有仿真机器鱼的编号应设置成相同值且不同于任何一支队伍的ColorFish值
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.CountDrawing">
+            <summary>
+            仿真机器鱼绘制次数计数（Draw()方法中用）
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.TrajectoryPoints">
+            <summary>
+             仿真机器鱼绘制轨迹用的点列表
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.RoboFish.FishBodyRadiusMm">
+            <summary>
+            仿真机器鱼前端矩形部分外接圆半径，用于界面选中仿真机器鱼处理过程，单位毫米
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.ResetSomeLocomotionPara">
+            <summary>
+            重置仿真机器鱼的部分运动学参数，用于重新初始化使命清除上一次运行结束时保存的值
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.UpdatePose(System.Int32,System.Int32)">
+            <summary>
+            根据仿真周期毫秒数更新仿真机器鱼位姿
+            </summary>
+            <param name="timeIntervalMs">仿真周期毫秒数</param>
+            <param name="flag">所属队伍左右半场标志值1为左半场-1为右半场</param>
+            <remarks>注意：按照运动学模型设计的顺序，每个周期各运动学计算相关方法调用顺序为
+            UpdatePose, UpdateVelocityAndAngularVelocity, DetectCollision, ResponseCollision</remarks>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.UpdateVelocityAndAngularVelocity(System.Int32,System.Int32)">
+            <summary>
+            根据仿真周期毫秒数更新仿真机器鱼速度值速度方向和角速度值
+            </summary>
+            <param name="timeIntervalMs">仿真周期毫秒数</param>
+            <param name="flag">所属队伍左右半场标志值1为左半场-1为右半场</param>
+            <remarks>注意：按照运动学模型设计的顺序，每个周期各运动学计算相关方法调用顺序为
+            UpdatePose, UpdateVelocityAndAngularVelocity, DetectCollision, ResponseCollision</remarks>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.CalculateFishPostion(System.Boolean,System.Boolean,System.Single,URWPGSim2D.Common.RoboFish@)">
+            <summary>
+            仿真机器鱼各个点的更新计算方法 
+            <param name="isRunning">仿真使命（比赛或实验项目）是否正在运行即机器鱼是否正在游动</param>
+            <param name="isPaused">仿真使命（比赛或实验项目）是否暂停即机器鱼是否正在游动</param>
+            <param name="initPhase">仿真机器鱼尾部关节的初始相位</param>
+            <param name="fish">仿真机器鱼对象</param>
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.Draw(System.Drawing.Graphics@,System.Boolean,System.Boolean,System.Single,System.Int32,System.Int32)">
+            <summary>
+            将当前仿真机器鱼绘制到GDI+绘图对象上
+            </summary>
+            <param name="g">来自与绘图容器PictureBox等尺寸的Bitmap的GDI+绘图对象</param>
+            <param name="isRunning">仿真使命（比赛或实验项目）是否正在运行即机器鱼是否正在游动 
+            用于控制是否绘制鱼尾游动效果</param>
+            <param name="isPaused">仿真使命（比赛或实验项目）是否在运行过程中被设置为暂停状态
+            暂停状态可由界面按下暂停按钮设置，也可根据需要使用程序代码设置</param>
+            <param name="initPhase">仿真机器鱼尾部关节的初始相位</param>
+            <param name="fishId">鱼的ID</param>
+            <param name="flag">所属队伍左右半场标志值1为左半场-1为右半场 
+            在右半场flag为-1，则在绘制之前让鱼体朝向取反，如此能绘出右半场队伍的仿真机器鱼从右向左动作的效果 
+            再配合仿真机器鱼位姿更新时各维坐标增量也取反，便实现了同一策略适用左右半场</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.ReversePose">
+            <summary>
+            对调所处半场，即将位置坐标和鱼体方向取反
+            用于仿真机器鱼所属队伍位于右半场时绘制/碰撞检测/向客户端或策略传递参数前的处理
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.RecoveryPose">
+            <summary>
+            恢复所处半场
+            用于仿真机器鱼所属队伍位于右半场时绘制/碰撞检测/向客户端或策略传递参数后的处理
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.Vector3ToPoint(Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            将三维Vector3点转换成二维Point点，取X和Z维
+            </summary>
+            <param name="vector3">三维Vector3点</param>
+            <returns>二维Point点</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            modified by renjing 20120330 增加了碰撞检测的几个参数拷贝
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.RoboFish.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.Decision">
+            <summary>
+            仿真机器鱼运动决策数据结构体
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Decision.VCode">
+            <summary>
+            决策结果的速度档位，取值范围{0,1,...,15}，0最慢，15最快
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Decision.TCode">
+            <summary>
+            决策结果的转弯档位，取值范围{0,1,...,15}，0左转最急，7直游，15右转最急
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.CollisionType">
+            <summary>
+            仿真进程中可能发生的对象间碰撞类型枚举
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.NONE">
+            <summary>
+            无碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.FISH_FISH">
+            <summary>
+            仿真机器鱼之间碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.FISH_BALL">
+            <summary>
+            仿真机器鱼和仿真水球碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.FISH_POOL">
+            <summary>
+            仿真机器鱼和仿真水池池壁碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.FISH_OBSTACLE">
+            <summary>
+            仿真机器鱼和仿真静态障碍物碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.FISH_CHANNEL">
+            <summary>
+            仿真机器鱼和仿真通道碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.BALL_POOL">
+            <summary>
+            仿真水球和仿真水池池壁碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.BALL_OBSTACLE">
+            <summary>
+            仿真水球和仿真静态障碍物碰撞
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.CollisionType.BALL_CHANNEL">
+            <summary>
+            仿真水球和仿真通道碰撞
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.Team`1">
+            <summary>
+            仿真比赛队伍数据类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Team`1.Para">
+            <summary>
+             仿真比赛队伍公共参数
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.Team`1.Fishes">
+            <summary>
+             仿真比赛队伍中仿真机器鱼列表
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.Team`1.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.TeamCommonPara">
+            <summary>
+            仿真机器鱼队伍公共参数类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.TeamCommonPara.FishCount">
+            <summary>
+            仿真比赛队伍中仿真机器鱼数量
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.TeamCommonPara.MyHalfCourt">
+            <summary>
+            仿真比赛队伍中所处仿真场地半场（左或右）
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.TeamCommonPara.Score">
+            <summary>
+            仿真比赛队伍中当前得分
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.TeamCommonPara.Name">
+            <summary>
+            仿真比赛队伍名称
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.TeamCommonPara.IsReady">
+            <summary>
+            仿真比赛队伍是否已经准备好，按下了Ready按钮
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.TeamCommonPara.CopyTo(Microsoft.Dss.Core.IDssSerializable)">
+            <summary>
+            实现CopyTo接口的方法,将当前对象拷贝到target指定的<see cref="T:Microsoft.Dss.Core.IDssSerializable">IDssSerializable</see>类型对象
+            </summary>
+            <param name="target">当前对象拷贝到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.TeamCommonPara.Clone">
+            <summary>
+            实现Clone接口的方法，拷贝一份当前对象的副本
+            </summary>
+            <returns>当前对象的副本</returns>
+        </member>
+        <member name="M:URWPGSim2D.Common.TeamCommonPara.Serialize(System.IO.BinaryWriter)">
+            <summary>
+            实现Serialize接口的方法，将当前对象序列化到writer指定的<see cref="T:System.IO.BinaryWriter">BinaryWriter</see>类型对象
+            </summary>
+            <param name="writer">当前对象序列化到的目标对象</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.TeamCommonPara.Deserialize(System.IO.BinaryReader)">
+            <summary>
+            实现Deserialize接口的方法，从reader指定的<see cref="T:System.IO.BinaryReader">BinaryReader</see>类型对象中反序列化一个当前类型的对象
+            </summary>
+            <param name="reader">反序列化操作的来源对象</param>
+            <returns>反序列化得到的当前类型对象</returns>
+        </member>
+        <member name="T:URWPGSim2D.Common.HalfCourt">
+            <summary>
+            场地左右半场类型枚举
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.HalfCourt.LEFT">
+            <summary>
+            左半场
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.HalfCourt.RIGHT">
+            <summary>
+            右半场
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.NumberTextBox">
+            <summary>
+            只允许输入数字的文本框控件
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.NumberTextBox.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="T:URWPGSim2D.Common.NumberComboBox">
+            <summary>
+            只允许输入数字的组合框控件
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.NumberComboBox.EditHandle">
+            <summary>
+            Editor窗口句柄
+            </summary>
+        </member>
+        <member name="P:URWPGSim2D.Common.NumberComboBox.EditNativeWindow">
+            <summary>
+            Editor窗口的NativeWindow对象
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.NumberComboBox.OnHandleCreated(System.EventArgs)">
+            <summary>
+            重载句柄创建完成事件 保存窗体句柄和窗体对象的引用
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:URWPGSim2D.Common.NumberComboBox.OnHandleDestroyed(System.EventArgs)">
+            <summary>
+            重载句柄销毁完成事件 销毁窗体对象释放资源
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:URWPGSim2D.Common.EditNativeWindow">
+            <summary>
+            Editor窗口的NativeWindow类
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.EditNativeWindow.#ctor(URWPGSim2D.Common.NumberComboBox)">
+            <summary>
+            构造函数，给传入的NumberComboBox对象构造一个Native窗口
+            </summary>
+            <param name="owner"></param>
+        </member>
+        <member name="M:URWPGSim2D.Common.EditNativeWindow.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            拦截NativeWindow的WM_PASTE和WM_CHAR消息
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:URWPGSim2D.Common.EditNativeWindow.Dispose">
+            <summary>
+            销毁对象
+            </summary>
+        </member>
+        <member name="T:URWPGSim2D.Common.FishSettingComboControls">
+            <summary>
+            服务端Fish设置界面FishSetting块控件组合类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.CmbPlayers">
+            <summary>
+            仿真机器鱼选择下拉框控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.BtnFrontColor">
+            <summary>
+            仿真机器鱼前部色标选择按钮控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.BtnBackColor">
+            <summary>
+            仿真机器鱼后部色标选择按钮控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.TxtPositionMmX">
+            <summary>
+            仿真机器鱼位置坐标X分量显示控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.TxtPositionMmZ">
+            <summary>
+            仿真机器鱼位置坐标Z分量显示控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.TxtDirectionDeg">
+            <summary>
+            仿真机器鱼鱼体方向显示控件（弧度转成角度显示）
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.BtnConfirm">
+            <summary>
+            仿真机器鱼设置确认按钮控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.GrpContainer">
+            <summary>
+            分组容器控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.FishSettingComboControls.TeamId">
+            <summary>
+            当前组合控件所代表队伍的编号（0,1...)
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.FishSettingComboControls.#ctor(System.Int32,System.Int32)">
+            <summary>
+            带参数构造函数
+            </summary>
+            <param name="teamId">当前对象所代表的仿真使命参与队伍编号（从0开始）</param>
+            <param name="Fishes">当前对象所代表的仿真使命参与队伍仿真机器鱼数量</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.FishSettingComboControls.CmbPlayers_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            更换队伍队员时点击按钮触发事件
+            </summary>
+            <param name="sender">事件对象</param>
+            <param name="e">事件参数</param>
+        </member>
+        <member name="T:URWPGSim2D.Common.BallSettingComboControls">
+            <summary>
+            服务端Fish设置界面BallSetting块控件组合类
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.BtnColor">
+            <summary>
+            仿真水球填充色选择按钮控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.TxtPositionMmX">
+            <summary>
+            仿真水球位置坐标X分量显示控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.TxtPositionMmZ">
+            <summary>
+            仿真水球位置坐标Z分量显示控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.TxtRadiusMm">
+            <summary>
+            仿真水球半径值显示控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.GrpContainer">
+            <summary>
+            分组容器控件
+            </summary>
+        </member>
+        <member name="F:URWPGSim2D.Common.BallSettingComboControls.BallId">
+            <summary>
+            当前组合控件所代表仿真水球的编号（0,1...)
+            </summary>
+        </member>
+        <member name="M:URWPGSim2D.Common.BallSettingComboControls.#ctor(System.Int32,System.Int32)">
+            <summary>
+            带参数构造函数
+            根据仿真水球编号（从0开始）和当前仿真使命中仿真水球数量构造仿真水球设置对象
+            </summary>
+            <param name="ballId">仿真水球编号（从0开始）</param>
+            <param name="balls">当前仿真使命中仿真水球数量</param>
+        </member>
+        <member name="M:URWPGSim2D.Common.BallSettingComboControls.SetBallInfoToUi">
+            <summary>
+            将当前仿真水球对象详细信息设置到相应界面控件中
+            </summary>
+        </member>
+    </members>
+</doc>

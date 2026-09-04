@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Strategy">
+</Property><Property Name="解决方案文件" Value="C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Strategy.sln">
+</Property><Property Name="用户选项文件" Value="C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Strategy.suo">
+</Property><Property Name="Date" Value="2014年12月11日">
+</Property><Property Name="Time" Value="15:48">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Strategy.sln" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Strategy.suo" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy.suo">
+</Event><Event ErrorLevel="0" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.csproj">
+</Event><Event ErrorLevel="0" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy2VS2Scrimmage\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.cs">
+</Event><Event ErrorLevel="0" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy3VS3" Source="Strategy3VS3\Strategy3VS3.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy3VS3\Strategy3VS3.csproj">
+</Event><Event ErrorLevel="0" Project="Strategy3VS3" Source="Strategy3VS3\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy3VS3\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Strategy3VS3" Source="Strategy3VS3\Strategy3VS3.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy3VS3\Strategy3VS3.cs">
+</Event><Event ErrorLevel="0" Project="Strategy3VS3" Source="Strategy3VS3\Strategy3VS3.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Strategy3VS3" Source="Strategy3VS3\Strategy3VS3.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.csproj">
+</Event><Event ErrorLevel="0" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.cs">
+</Event><Event ErrorLevel="0" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySpeedRaceTwoFishesPassHole\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.csproj">
+</Event><Event ErrorLevel="0" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.cs">
+</Event><Event ErrorLevel="0" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategyRelayRaceDribbling12M\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.csproj" Description="Converted">
+</Event><Event ErrorLevel="2" Project="StrategyCoopratePushBallTwoFishesPassHole" Source="StrategyCoopratePushBallTwoFishesPassHole\StrategyCoopratePushBallTwoFishesPassHole.csproj" Description="无法打开项目文件以执行升级操作。">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy1VS1\Strategy1VS1.csproj">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.csproj.user" Description="项目用户文件成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy1VS1\Strategy1VS1.csproj.user">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy1VS1\Strategy1VS1.cs">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy1VS1\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="StrategySnooker" Source="StrategySnooker\StrategySnooker.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySnooker\StrategySnooker.csproj">
+</Event><Event ErrorLevel="0" Project="StrategySnooker" Source="StrategySnooker\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySnooker\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="StrategySnooker" Source="StrategySnooker\StrategySnooker.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySnooker\StrategySnooker.cs">
+</Event><Event ErrorLevel="0" Project="StrategySnooker" Source="StrategySnooker\StrategySnooker.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="StrategySnooker" Source="StrategySnooker\StrategySnooker.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\StrategySynchronisedSwimming.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySynchronisedSwimming\StrategySynchronisedSwimming.csproj">
+</Event><Event ErrorLevel="0" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\StrategySynchronisedSwimming.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySynchronisedSwimming\StrategySynchronisedSwimming.cs">
+</Event><Event ErrorLevel="0" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\StrategySynchronisedSwimming\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\StrategySynchronisedSwimming.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\StrategySynchronisedSwimming.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy5VS5" Source="Strategy5VS5\Strategy5VS5.csproj" Description="项目文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy5VS5\Strategy5VS5.csproj">
+</Event><Event ErrorLevel="0" Project="Strategy5VS5" Source="Strategy5VS5\Strategy5VS5.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy5VS5\Strategy5VS5.cs">
+</Event><Event ErrorLevel="0" Project="Strategy5VS5" Source="Strategy5VS5\Properties\AssemblyInfo.cs" Description="文件已成功备份为 C:\Users\Administrator\Desktop\URWPGSim2D.20140423Src\URWPGSim2D.20140423Src\URWPGSim2D\Strategy\Backup\Strategy5VS5\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Strategy5VS5" Source="Strategy5VS5\Strategy5VS5.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="Strategy5VS5" Source="Strategy5VS5\Strategy5VS5.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Strategy.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="Strategy.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Strategy2VS2Scrimmage" Source="Strategy2VS2Scrimmage\Strategy2VS2Scrimmage.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="Strategy3VS3" Source="Strategy3VS3\Strategy3VS3.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="StrategySpeedRaceTwoFishesPassHole" Source="StrategySpeedRaceTwoFishesPassHole\StrategySpeedRaceTwoFishesPassHole.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="StrategyRelayRaceDribbling12M" Source="StrategyRelayRaceDribbling12M\StrategyRelayRaceDribbling12M.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="Strategy1VS1" Source="Strategy1VS1\Strategy1VS1.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="StrategySnooker" Source="StrategySnooker\StrategySnooker.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="StrategySynchronisedSwimming" Source="StrategySynchronisedSwimming\StrategySynchronisedSwimming.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event><Event ErrorLevel="0" Project="Strategy5VS5" Source="Strategy5VS5\Strategy5VS5.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

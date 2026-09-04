@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "active_work_id": null,
+  "works": {
+    "quickrescue-strategy": {
+      "work_id": "quickrescue-strategy",
+      "active_plan": ".omo/plans/quickrescue-strategy.md",
+      "plan_name": "quickrescue-strategy",
+      "session_ids": ["codex:atlas-orchestrator"],
+      "status": "completed",
+      "worktree_path": null,
+      "started_at": "2026-09-04T00:00:00.000Z",
+      "completed_at": "2026-09-04T09:00:00.000+08:00",
+      "final_verdict": {
+        "f1_plan_compliance": "APPROVE",
+        "f2_code_quality": "APPROVE",
+        "f3_behavioral_qa": "APPROVE WITH NOTES (push reliability)",
+        "f4_scope_fidelity": "APPROVE",
+        "overall": "COMPLETED — 6/6 tasks done, build clean, probes 92/92 pass, scope pure. Simulator smoke test blocked by DSS HTTP port 20000 admin privilege requirement (documented in task-6-6b-elevation-blocker.txt)."
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <fish>
+        <fishbody>
+            <BodyLength>160</BodyLength>
+            <BodyWidth>45</BodyWidth>
+        </fishbody>
+        <fishtail>
+            <TailJointLength1>88</TailJointLength1>
+            <TailJointLength2>66</TailJointLength2>
+            <TailJointLength3>55</TailJointLength3>
+        </fishtail>
+    </fish>
+    <ball>
+        <BallRadius>58</BallRadius>
+    </ball>
+    <obstacle />
+    <form>
+        <mainform>
+            <SpanBetweenFieldAndTabControlPix>10</SpanBetweenFieldAndTabControlPix>
+            <FormPaddingPix>10</FormPaddingPix>
+        </mainform>
+        <showGameform>
+            <FormLocationX>11</FormLocationX>
+            <FormLocationY>102</FormLocationY>
+            <FormWidth>662</FormWidth>
+            <FormHighth>450</FormHighth>
+        </showGameform>
+        <tabControl />
+    </form>
+    <field>
+        <FieldLengthXMm>3000</FieldLengthXMm>
+        <FieldLengthZMm>2000</FieldLengthZMm>
+        <GoalDepthMm>150</GoalDepthMm>
+        <GoalWidthMm>400</GoalWidthMm>
+        <FieldInnerBorderPix>5</FieldInnerBorderPix>
+        <FieldOuterBorderPix>20</FieldOuterBorderPix>
+        <ForbiddenZoneLengthXMm>400</ForbiddenZoneLengthXMm>
+        <ForbiddenZoneLengthZMm>1000</ForbiddenZoneLengthZMm>
+        <CenterCircleRadiusMm>500</CenterCircleRadiusMm>
+    </field>
+    <paras>
+        <MaxCachedCycles>50</MaxCachedCycles>
+    </paras>
+    <missions />
+</config>

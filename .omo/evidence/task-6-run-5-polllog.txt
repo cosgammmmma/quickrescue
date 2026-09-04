@@ -1,0 +1,17 @@
+﻿03:46:14.184 FIELD shot task-6-run-5-field-034613.png ok=True
+03:46:34.922 FIELD shot task-6-run-5-field-034634.png ok=True
+03:46:55.567 FIELD shot task-6-run-5-field-034655.png ok=True
+03:47:16.284 FIELD shot task-6-run-5-field-034716.png ok=True
+03:47:36.933 FIELD shot task-6-run-5-field-034736.png ok=True
+03:47:57.596 FIELD shot task-6-run-5-field-034757.png ok=True
+03:48:05.742 poll chunk done (popups so far: 0)
+03:53:34.200 POPUP #1: 'Time to Exchange Half-Court.' shot=task-6-run-5-popup1-035334.png ok=True
+03:53:35.556 POPUP #1 dismissed
+03:53:36.122 RESUMED (clicked Continue(C))
+03:53:36.862 FIELD shot task-6-run-5-field-035336.png ok=True
+03:53:57.561 FIELD shot task-6-run-5-field-035357.png ok=True
+03:54:18.268 FIELD shot task-6-run-5-field-035418.png ok=True
+03:54:38.965 FIELD shot task-6-run-5-field-035438.png ok=True
+03:54:59.802 FIELD shot task-6-run-5-field-035459.png ok=True
+03:55:20.495 FIELD shot task-6-run-5-field-035520.png ok=True
+03:55:24.556 poll chunk done (popups so far: 1)

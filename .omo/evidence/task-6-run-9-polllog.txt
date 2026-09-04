@@ -1,0 +1,7 @@
+﻿05:00:12.875 FIELD shot task-6-run-9-field-050012.png ok=True
+05:00:33.768 FIELD shot task-6-run-9-field-050033.png ok=True
+05:00:54.638 FIELD shot task-6-run-9-field-050054.png ok=True
+05:01:15.446 FIELD shot task-6-run-9-field-050115.png ok=True
+05:01:36.163 FIELD shot task-6-run-9-field-050135.png ok=True
+05:01:56.824 FIELD shot task-6-run-9-field-050156.png ok=True
+05:02:09.049 poll chunk done (popups so far: 0)

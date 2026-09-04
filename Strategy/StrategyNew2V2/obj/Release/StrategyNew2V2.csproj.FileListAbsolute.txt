@@ -1,0 +1,5 @@
+E:\progaram\URWPGSim2D\Strategy\StrategyNew2V2\bin\Release\wsy2v2.dll
+E:\progaram\URWPGSim2D\Strategy\StrategyNew2V2\bin\Release\wsy2v2.pdb
+E:\progaram\URWPGSim2D\Strategy\StrategyNew2V2\obj\Release\wsy2v2.dll
+E:\progaram\URWPGSim2D\Strategy\StrategyNew2V2\obj\Release\wsy2v2.pdb
+e:\progaram\URWPGSim2D\Strategy\StrategyNew2V2\obj\Release\StrategyNew2V2.csprojResolveAssemblyReference.cache
