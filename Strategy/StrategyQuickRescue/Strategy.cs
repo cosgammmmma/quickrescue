@@ -265,7 +265,8 @@ namespace URWPGSim2D.Strategy
             this.pushing = new bool[fishCount];
             for (int i = 0; i < fishCount; i++)
             {
-                this.assignedBall[i] = -1;
+                // Initialize to -1 (free) so that UpdateAssignments correctly distributes two balls to two fishes
+                this.assignedBall[i] = -1; 
             }
         }
 
