@@ -5,7 +5,7 @@ namespace URWPGSim2D.Strategy
 
     /// <summary>
     /// Path planning around the field obstacles.
-    /// BFS shortest path over a uniform grid with body-size obstacle inflation,
+    /// 8-connected A* shortest path over a uniform grid with body-size obstacle inflation,
     /// followed by collinear waypoint compression.
     /// </summary>
     public static class PathFinder
@@ -15,6 +15,20 @@ namespace URWPGSim2D.Strategy
 
         /// <summary>Epsilon for the collinearity cross-product test.</summary>
         private const double CollinearEpsilon = 1e-9;
+
+        // Eight neighbour offsets: 4 cardinal + 4 diagonal.
+        // Diagonals cannot cut through blocked corners (checked at call site).
+        private static readonly int[] DiI  = { -1, 1, 0, 0, -1, -1, 1, 1 };
+        private static readonly int[] DiJ  = {  0, 0,-1, 1,-1,  1, 1,-1};
+        private static readonly double[] DijCost = { 1.0, 1.0, 1.0, 1.0, 1.4142135623730951, 1.4142135623730951, 1.4142135623730951, 1.4142135623730951 };
+
+        /// <summary>Node for the binary-min-heap priority queue: cell index + estimated f-cost.</summary>
+        private struct HeapNode
+        {
+            public int Cell;
+            public double F;
+            public HeapNode(int cell, double f) { Cell = cell; F = f; }
+        }
 
         // Grid convention (deterministic): cell (i, j) covers
         // X [LeftMm + i*step, LeftMm + (i+1)*step) and Z [TopMm + j*step, TopMm + (j+1)*step);
@@ -37,7 +51,7 @@ namespace URWPGSim2D.Strategy
 
         /// <summary>
         /// Test/diagnostics hook: identical to the 4-argument overload, additionally reporting
-        /// rawCellCount = number of grid cells in the uncompressed BFS path (0 on failure).
+        /// rawCellCount = number of grid cells in the uncompressed A* path (0 on failure).
         /// Lets probes verify that compression actually shrinks the path.
         /// </summary>
         public static bool FindPath(Point2D start, Point2D target, double inflationMm, out List<Point2D> waypoints, out int rawCellCount)
@@ -59,7 +73,7 @@ namespace URWPGSim2D.Strategy
                 return false;
             }
 
-            int[] parent = BreadthFirstSearch(walkable, startCell, targetCell);
+            int[] parent = AstarSearch(walkable, startCell, targetCell);
             if (parent == null)
             {
                 return false;
@@ -136,49 +150,123 @@ namespace URWPGSim2D.Strategy
         }
 
         /// <summary>
-        /// 4-connected BFS (no diagonals, so paths never cut obstacle corners).
-        /// Deterministic neighbor order: -X, +X, -Z, +Z. Returns the parent array
-        /// (parent[startCell] == startCell) or null when the target is unreachable.
+        /// 8-connected A* with octile-distance heuristic.
+        /// Cardinal moves cost 1.0; diagonal moves cost sqrt(2). Diagonal steps cannot cut blocked corners.
+        /// Returns the parent array (parent[startCell] == startCell) or null when unreachable.
         /// </summary>
-        private static int[] BreadthFirstSearch(bool[] walkable, int startCell, int targetCell)
+        private static int[] AstarSearch(bool[] walkable, int startCell, int targetCell)
         {
-            int[] parent = new int[walkable.Length];
-            for (int k = 0; k < parent.Length; k++)
+            int total = walkable.Length;
+            double[] gScore = new double[total];
+            for (int k = 0; k < total; k++)
+            {
+                gScore[k] = double.MaxValue;
+            }
+            int[] parent = new int[total];
+            for (int k = 0; k < total; k++)
             {
                 parent[k] = -1;
             }
-            int[] di = new int[] { -1, 1, 0, 0 };
-            int[] dj = new int[] { 0, 0, -1, 1 };
-            Queue<int> frontier = new Queue<int>();
+            bool[] closed = new bool[total];
+
+            gScore[startCell] = 0.0;
             parent[startCell] = startCell;
-            frontier.Enqueue(startCell);
-            while (frontier.Count > 0)
+
+            // Binary min-heap of HeapNode keyed by f-cost.
+            var heap = new List<HeapNode>();
+            heap.Add(new HeapNode(startCell, OctileDistance(startCell, targetCell)));
+
+            while (heap.Count > 0)
             {
-                int cur = frontier.Dequeue();
+                // Extract min.
+                SwapRef(heap, 0, heap.Count - 1);
+                HeapNode curNode = heap[heap.Count - 1];
+                heap.RemoveAt(heap.Count - 1);
+                int cur = curNode.Cell;
+
+                if (closed[cur])
+                {
+                    continue;
+                }
+                closed[cur] = true;
+
                 if (cur == targetCell)
                 {
                     return parent;
                 }
+
                 int ci = cur % GridNx;
                 int cj = cur / GridNx;
-                for (int d = 0; d < 4; d++)
+
+                for (int d = 0; d < 8; d++)
                 {
-                    int ni = ci + di[d];
-                    int nj = cj + dj[d];
+                    int ni = ci + DiI[d];
+                    int nj = cj + DiJ[d];
                     if (ni < 0 || ni >= GridNx || nj < 0 || nj >= GridNz)
                     {
                         continue;
                     }
                     int next = nj * GridNx + ni;
-                    if (!walkable[next] || parent[next] != -1)
+                    if (!walkable[next] || closed[next])
                     {
                         continue;
                     }
+
+                    // No diagonal cutting: both cardinal neighbors must be walkable too.
+                    if (d >= 4 && (!walkable[nj * GridNx + ci] || !walkable[cj * GridNx + ni]))
+                    {
+                        continue;
+                    }
+
+                    double tentativeG = gScore[cur] + DijCost[d];
+                    if (tentativeG >= gScore[next])
+                    {
+                        continue;
+                    }
+
+                    gScore[next] = tentativeG;
                     parent[next] = cur;
-                    frontier.Enqueue(next);
+
+                    double h = OctileDistance(next, targetCell);
+                    double f = tentativeG + h;
+                    int insertIdx = heap.Count;
+                    heap.Add(new HeapNode(next, f));
+
+                    // Bubble up to maintain heap invariant.
+                    int idx = insertIdx;
+                    while (idx > 0)
+                    {
+                        int parentIdx = (idx - 1) / 2;
+                        if (heap[parentIdx].F <= heap[idx].F)
+                        {
+                            break;
+                        }
+                        SwapRef(heap, parentIdx, idx);
+                        idx = parentIdx;
+                    }
                 }
             }
-            return null;
+            return null; // Target not reachable.
+        }
+
+        /// <summary>Swap two elements in a List{&lt;HeapNode&gt;}.</summary>
+        private static void SwapRef(List<HeapNode> list, int a, int b)
+        {
+            HeapNode tmp = list[a];
+            list[a] = list[b];
+            list[b] = tmp;
+        }
+
+        /// <summary>Octile distance between two grid cells (admissible, consistent heuristic for 8-connected grids).</summary>
+        private static double OctileDistance(int cellA, int cellB)
+        {
+            int aI = cellA % GridNx;
+            int aJ = cellA / GridNx;
+            int bI = cellB % GridNx;
+            int bJ = cellB / GridNx;
+            int dx = Math.Abs(aI - bI);
+            int dy = Math.Abs(aJ - bJ);
+            return (dx - dy) > 0 ? dx + 0.4142135623730951 * dy : dy + 0.4142135623730951 * dx;
         }
 
         /// <summary>Parent-chain walk from targetCell back to startCell, reversed to start-&gt;target order.</summary>

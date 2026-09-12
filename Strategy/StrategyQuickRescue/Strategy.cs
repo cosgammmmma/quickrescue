@@ -185,50 +185,20 @@ namespace URWPGSim2D.Strategy
                     Point2D target = new Point2D(
                         ballPos.X + aimDir.X * PushAimAheadMm,
                         ballPos.Z + aimDir.Z * PushAimAheadMm);
-                    this.decisions[i].TCode = Steering.GetTCode(heading, Steering.SegmentAngle(fishPos, target));
-                    // FORWARD PROBE (2026-09-04 fix for "wall-crashing"): check 200mm ahead.
-                    // If obstacle detected in the pushing direction, slow down instead of
-                    // blindly charging at VCode=14.
-                    double probeDistToBall = MapConstants.Distance(fishPos, ballPos);
-                    int vcodePush = 14; // default full throttle
-                    if (probeDistToBall < PushProbeDistMm + PushOffsetMm)
-                    {
-                        // Ball is close enough that our forward probe overlaps the ball region.
-                        // Sample points along the aiming ray beyond the ball to detect obstacles
-                        // in the corridor between ball and rescue zone.
-                        Point2D probeFrom = new Point2D(
-                            ballPos.X + aimDir.X * PushOffsetMm,
-                            ballPos.Z + aimDir.Z * PushOffsetMm);
-                        Point2D probeTo = new Point2D(
-                            ballPos.X + aimDir.X * (PushProbeDistMm + PushOffsetMm),
-                            ballPos.Z + aimDir.Z * (PushProbeDistMm + PushOffsetMm));
-                        if (!IsLineClear(probeFrom, probeTo, 50.0))
-                        {
-                            vcodePush = 5; // reduced speed on obstacle detection
-                        }
-                    }
-                    this.decisions[i].VCode = vcodePush;
+                    Steering.ComputeNavigationDecision(heading, Steering.SegmentAngle(fishPos, target),
+                        MapConstants.Distance(fishPos, target),
+                        out this.decisions[i].TCode, out this.decisions[i].VCode);
                     continue;
                 }
 
-                // === Direct approach: line-clear check before BFS (2026-09-04 fix for "wall-crashing") ===
+                // === Direct approach: line-clear check before BFS ===
                 bool directClear = IsLineClear(fishPos, pushPoint, InflationMm);
                 if (directClear)
                 {
                     double dist = MapConstants.Distance(fishPos, pushPoint);
-                    double headingDelta = Math.Abs(Steering.FormatAngle(
-                        Steering.SegmentAngle(fishPos, pushPoint) - heading));
-                    // Turn angle > 30° → full speed VCode 14 regardless of distance
-                    int vcodeDirect;
-                    if (headingDelta * 180.0 / Math.PI > 30.0)
-                    {
-                        vcodeDirect = 14;
-                    }
-                    else
-                    {
-                        vcodeDirect = PathExecutor.ApproachVCode(dist);
-                    }
-                    this.decisions[i].TCode = Steering.GetTCode(heading, Steering.SegmentAngle(fishPos, pushPoint));
+                    Steering.ComputeNavigationDecision(heading, Steering.SegmentAngle(fishPos, pushPoint),
+                        dist, out int tcodeDirect, out int vcodeDirect);
+                    this.decisions[i].TCode = tcodeDirect;
                     this.decisions[i].VCode = vcodeDirect;
                     this.plannedPush[i] = pushPoint;
                     continue;

@@ -62,31 +62,22 @@ namespace URWPGSim2D.Strategy
         /// <summary>Consecutive slow cycles (see PathUpdateState.StuckCycles) that trigger a replan.</summary>
         private const int StuckCyclesLimit = 50;
 
-        // === Two-stage speed curve parameters (2026-09-04 fix for "slow movement") ===
-        /// <summary>Cruise distance: beyond this, fish runs at full throttle VCode 14 (~780 mm/s).</summary>
-        private const double CruiseDistMm = 1500.0;
-        /// <summary>Brake distance: below this, fish slows to VCode 3 (~67 mm/s) for precise turning near waypoints.</summary>
-        /// Updated 2026-09-04: 400→200mm. User request: only start braking when very close.
-        private const double BrakeDistMm = 200.0;
-
         /// <summary>
-        /// Advances waypointIndex along the path and computes the turn/speed codes.
-        /// Null/empty path: steer straight at fallbackTarget at fixed vcode 3 (never indexes the list).
-        /// Otherwise: clamps the index into range, advances past every waypoint within 40 mm
-        /// (never past the last; distance exactly 0 advances immediately — FindPath sets
-        /// waypoints[0] to the fish's compute-time position, so this prevents steering at a
-        /// degenerate self-angle on a fresh path), then steers at the current waypoint.
-        /// vcode = ApproachVCode(distance to the CURRENT waypoint): the executor's tuned
-        /// approach law slows the fish near each waypoint so inertial turns stay accurate.
-        /// MapConstants.GetVCode (the user's untouched dist/5 formula) is not used here.
+        /// Advances waypointIndex along the path and computes the turn/speed codes using
+        /// the unified decision rules: |delta| ≤ 10° → TCode 7; |delta| &gt; 10° → TCode 0/15.
+        /// Speed: large-angle (&gt; 60°) → VCode 6; otherwise dist ≤ 200 → 10, &gt; 200 → 14.
+        /// Null/empty path: steer straight at fallbackTarget (never indexes the list).
+        /// Otherwise: clamps the index into range, advances past every waypoint within 500 mm,
+        /// then steers at the current waypoint.
         /// </summary>
         public static void FollowPath(Point2D fishPos, double headingRad, List<Point2D> waypoints,
             ref int waypointIndex, Point2D fallbackTarget, out int tcode, out int vcode)
         {
             if (waypoints == null || waypoints.Count == 0)
             {
-                tcode = Steering.GetTCode(headingRad, Steering.SegmentAngle(fishPos, fallbackTarget));
-                vcode = 5;  // increased from 3 (~67 mm/s) to 5 (~285 mm/s) for faster direct approaches
+                double distFb = MapConstants.Distance(fishPos, fallbackTarget);
+                double desiredFb = Steering.SegmentAngle(fishPos, fallbackTarget);
+                Steering.ComputeNavigationDecision(headingRad, desiredFb, distFb, out tcode, out vcode);
                 return;
             }
 
@@ -108,50 +99,7 @@ namespace URWPGSim2D.Strategy
             }
 
             double desired = Steering.SegmentAngle(fishPos, waypoints[waypointIndex]);
-            tcode = Steering.GetTCode(headingRad, desired);
-
-            // Turn > 30° → full speed VCode 14 regardless of distance (user request)
-            double headingDelta = Math.Abs(Steering.FormatAngle(desired - headingRad));
-            if (headingDelta * 180.0 / Math.PI > 30.0)
-            {
-                vcode = 14;
-            }
-            else
-            {
-                vcode = ApproachVCode(distToCurrent);
-            }
-        }
-
-        /// <summary>
-        /// Two-stage approach speed law (2026-09-04 fix for "slow movement" problem #1).
-        /// 
-        /// OLD: int v = (int)(distMm / 500.0); floor=3 → dist 2000mm → VCode 3 (~67 mm/s) = stuck!
-        ///   Root cause: flat denominator made fish crawl through multi-segment paths where each
-        ///   segment was only a few hundred mm long.
-        /// 
-        /// NEW: Two-stage curve
-        ///   [CruiseDist..∞) → full throttle VCode=14 (~780 mm/s) — cross-field sprints
-        ///   [BrakeDist..CruiseDist] → linear interpolation V3→V14 — smooth deceleration
-        ///   [0..BrakeDist) → floor at VCode=3 (~67 mm/s) — precise waypoint approach
-        /// 
-        /// Why brake at 200mm? Floor=3 gives ~67 mm/s which + fixed TCode-turning produces a
-        /// minimum turning radius of ~170mm. Obstacle corridors after inflation are 300mm+ wide,
-        /// so this is safe. The dead-zone fix (Steering ×2.5 exponent) makes turns responsive
-        /// even at VCode 3+, so tighter waypoints no longer cause overshoot.
-        /// </summary>
-        public static int ApproachVCode(double distMm)
-        {
-            if (distMm >= CruiseDistMm)
-            {
-                return 14;  // Full cruise throttle — cross-field sprints!
-            }
-            if (distMm <= BrakeDistMm)
-            {
-                return 3;   // Precision approach near waypoint
-            }
-            // Linear interpolation between BrakeDist (V3) and CruiseDist (V14)
-            double ratio = (distMm - BrakeDistMm) / (CruiseDistMm - BrakeDistMm);
-            return 3 + (int)(ratio * 11.0);  // 14 - 3 = 11 steps
+            Steering.ComputeNavigationDecision(headingRad, desired, distToCurrent, out tcode, out vcode);
         }
 
         /// <summary>
