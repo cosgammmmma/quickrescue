@@ -182,6 +182,10 @@ namespace URWPGSim2D.Strategy
                 SwapRef(heap, 0, heap.Count - 1);
                 HeapNode curNode = heap[heap.Count - 1];
                 heap.RemoveAt(heap.Count - 1);
+
+                // FIX: Re-heapify the root element after extraction
+                HeapDown(heap, 0); 
+
                 int cur = curNode.Cell;
 
                 if (closed[cur])
@@ -255,6 +259,41 @@ namespace URWPGSim2D.Strategy
             HeapNode tmp = list[a];
             list[a] = list[b];
             list[b] = tmp;
+        }
+
+        /// <summary>Bubble up a newly added element at `idx`.</summary>
+        private static void HeapUp(List<HeapNode> heap, int idx)
+        {
+            while (idx > 0)
+            {
+                int parentIdx = (idx - 1) / 2;
+                if (heap[parentIdx].F <= heap[idx].F) break;
+                SwapRef(heap, parentIdx, idx);
+                idx = parentIdx;
+            }
+        }
+
+        /// <summary>Bubble down the root element after extraction to maintain heap invariant.</summary>
+        private static void HeapDown(List<HeapNode> heap, int idx)
+        {
+            int size = heap.Count;
+            while (true)
+            {
+                int leftChild = 2 * idx + 1;
+                if (leftChild >= size) break;
+
+                int rightChild = leftChild + 1;
+                int bestChild = leftChild;
+                if (rightChild < size && heap[rightChild].F < heap[leftChild].F)
+                {
+                    bestChild = rightChild;
+                }
+
+                if (heap[idx].F <= heap[bestChild].F) break;
+
+                SwapRef(heap, idx, bestChild);
+                idx = bestChild;
+            }
         }
 
         /// <summary>Octile distance between two grid cells (admissible, consistent heuristic for 8-connected grids).</summary>
